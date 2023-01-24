@@ -50,6 +50,11 @@ a {
     font-weight: 500;
 }
 
+.link-home:hover {
+    transition: 0.5s ease-in-out;
+    border-bottom: 2px solid #a81515;
+}
+
 .nav-neumporphism {
     background: rgba(0, 0, 0, 0.46);
     border-radius: 26px;
@@ -101,7 +106,7 @@ a {
     width: 220vw;
     -webkit-box-shadow: 11px 13px 52px -12px rgba(255, 0, 34, 1);
     -moz-box-shadow: 11px 13px 2002px -12px  rgba(255, 0, 34, 1);
-    box-shadow: 1px 1px 22px 5px rgba(255, 0, 34, 0.534);
+    box-shadow: -12px 5px 22px -5px rgba(255, 0, 34, 0.534);
 }
 
 .aside-home {
@@ -109,6 +114,9 @@ a {
     width: 50vw;
     background-color: #272727c9;
     margin-right: 3rem;
+    -webkit-box-shadow: 11px 13px 52px -12px rgba(255, 0, 34, 1);
+    -moz-box-shadow: 11px 13px 2002px -12px  rgba(255, 0, 34, 1);
+    box-shadow: 1px 1px 40px -5px rgba(255, 0, 34, 0.534);
 }
 
 .card {
@@ -172,4 +180,10 @@ a {
 .card-button:hover {
     border: 1px solid #ffcaa6;
     background-color: #a81515;
+}
+
+/* Footer */
+.footer-home {
+    width: 60vw;
+    height: 7vh;
 }
