@@ -4,66 +4,164 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="shortcut icon" href="./assets/img/usuario_semfil.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body class="body-login">
-    <div class="d-none d-lg-flex container" id="container">
+    <div class="d-none d-lg-flex container animate__animated animate__slideInUp" id="container">
         <div class="form-container-lg sign-up-container">
-            <form>
-                <h1 class="mb-4">Create Account</h1>
-                <input type="text" placeholder="First name"/>
-                <input type="text" placeholder="Last name"/>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required oninvalid="this.setCustomValidity('Password must contain at least one uppercase letter, one lowercase letter, and one number, and be at least 8 characters long.');" oninput="this.setCustomValidity('');"//>
-                <button class="mt-4">Sign Up</button>
+            <form class="form-login">
+                <div class="d-flex mt-5">
+                    <a href="./home.html"><img class="me-2 arrow-back" src="./assets/img/arrow-login.png" alt="arrow-back" style="width: 3rem; margin-top: 2.8rem;"></a>
+                    <h1 class="mb-2 text-light pt-5 title-login-account">Create Account</h1>
+                </div>
+                <div class="input-login">
+                    <input type="text" required>
+                    <label>
+                        <span style="transition-delay:0ms">F</span><span style="transition-delay:50ms">i</span><span style="transition-delay:100ms">r</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">t</span>
+                        <span style="transition-delay:200ms"></span><span style="transition-delay:250ms">n</span><span style="transition-delay:270ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:330ms">e</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="text" required>
+                    <label>
+                        <span style="transition-delay:0ms">L</span><span style="transition-delay:50ms">a</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">t</span>
+                        <span style="transition-delay:200ms"></span><span style="transition-delay:250ms">n</span><span style="transition-delay:270ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:330ms">e</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="email" required>
+                    <label>
+                        <span style="transition-delay:0ms">E</span><span style="transition-delay:50ms">m</span><span style="transition-delay:150ms">a</span><span style="transition-delay:200ms">i</span><span style="transition-delay:200ms">l</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required oninvalid="this.setCustomValidity('Password must contain at least one uppercase letter, one lowercase letter, and one number, and be at least 8 characters long.');" oninput="this.setCustomValidity('');">
+                    <label>
+                        <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                    </label>
+                </div>
+                <button class="mt-4 btn-login fw-bold">Sign Up</button>
             </form>
         </div>
         <div class="form-container-lg sign-in-container">
-            <form action="#">
-                <h1 class="mb-4">Sign in</h1>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="Password">
-                <a href="./forgot-password.html">Forgot your password?</a>
-                <button>Sign In</button>
+            <form class="form-login">
+                <div class="d-flex">
+                    <a href="./home.html"><img class="me-2 arrow-back" src="./assets/img/arrow-login.png" alt="arrow-back" style="width: 3rem;"></a>
+                    <h1 class="mb-4 text-light">Sign in</h1>
+                </div>
+                <div class="input-login">
+                    <input type="email" required>
+                    <label>
+                        <span style="transition-delay:0ms">E</span><span style="transition-delay:50ms">m</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">i</span><span style="transition-delay:200ms">l</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="password" required>
+                    <label>
+                        <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                    </label>
+                </div>
+                <a href="./forgot-password.html" class="text-danger mt-2">Forgot your password?</a>
+                <button class="btn-login fw-bold mt-4">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1>Welcome back to</h1>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <h1 class="title-login">Welcome back to <span>Semfil</span> Gaming</h1>
+                    <button class="button-sign mt-2" id="signIn">
+                        Sign In
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                        </div>
+                    </button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1 class="mb-3">Hello, and welcome to</h1>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <h1 class="mb-3 title-login">Hello, and welcome to <span>Semfil</span> Gaming</h1>
+                    <button class="button-sign mt-2" id="signUp">
+                        Sign Up
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
     <div class="d-flex d-lg-none container-sm" id="container-sm">
         <div class="form-container-sm sign-in-container-sm animate__animated animate__bounceInUp">
-            <form action="#" class="d-flex flex-column">
-                <h1 class="mb-4 mt-5">Sign in</h1>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="Password"/>
-                <a href="#" class="mt-4 mb-4">Forgot your password?</a>
-                <button>Sign In</button>
-                <a href="" class="mt-4" id="signupbtn-sm">Not a client? <span>Sign up!</span></a>
+            <form class="d-flex flex-column form-login-mobile rounded">
+                <div class="d-flex">
+                    <a href="./home.html"> <img class="me-2" src="./assets/img/arrow-login.png" alt="arrow-back" style="width: 2.5rem; height: 2.5rem; margin-top: 3rem;"></a>
+                    <h1 class="mb-4 mt-5 text-light">Sign in</h1>
+                </div>
+                <div class="input-login">
+                    <input type="email" required>
+                    <label>
+                        <span style="transition-delay:0ms">E</span><span style="transition-delay:50ms">m</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">i</span><span style="transition-delay:200ms">l</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="password" required>
+                    <label>
+                        <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                    </label>
+                </div>
+                <a href="#" class="mt-4 mb-4 text-danger">Forgot your password?</a>
+                <button class="btn-login">Sign In</button>
+                <a class="mt-4 text-danger" id="signupbtn-sm">Not a client? <span>Sign up!</span></a>
             </form>
         </div>
         <div class="d-none form-container sign-up-container-sm animate__animated animate__bounceInUp">
-            <form action="#" class="d-flex flex-column">
-                <h1 class="mb-2 mt-4">Create Account</h1>
-                <input type="text" placeholder="First name"/>
-                <input type="text" placeholder="Last name"/>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required oninvalid="this.setCustomValidity('Password must contain at least one uppercase letter, one lowercase letter, and one number, and be at least 8 characters long.');" oninput="this.setCustomValidity('');"/>
-                <button class="mt-3">Sign Up</button>
-                <a href="" class="mt-3" id="signinbtn-sm">Already a client?<span>Log in!</span></a>
+            <form action="#" class="d-flex flex-column form-login-mobile pt-1">
+                <div class="d-flex">
+                    <a href="./home.html"><img class="me-2" style="width: 2.5rem; margin-top: 5.5rem;" src="./assets/img/arrow-login.png" alt="arrow-back"></a>
+                    <h1 class="mb-2 mt-5 text-light pt-5 title-login-account" style="font-size: 1.3rem;">Create Account</h1>
+                </div>
+                <div class="input-login">
+                    <input type="text" required>
+                    <label>
+                        <span style="transition-delay:0ms">F</span><span style="transition-delay:50ms">i</span><span style="transition-delay:100ms">r</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">t</span>
+                        <span style="transition-delay:200ms"></span><span style="transition-delay:250ms">n</span><span style="transition-delay:270ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:330ms">e</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="text" required>
+                    <label>
+                        <span style="transition-delay:0ms">L</span><span style="transition-delay:50ms">a</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">t</span>
+                        <span style="transition-delay:200ms"></span><span style="transition-delay:250ms">n</span><span style="transition-delay:270ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:330ms">e</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="email" required>
+                    <label>
+                        <span style="transition-delay:0ms">E</span><span style="transition-delay:50ms">m</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">i</span><span style="transition-delay:200ms">l</span>
+                    </label>
+                </div>
+
+                <div class="input-login">
+                    <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required oninvalid="this.setCustomValidity('Password must contain at least one uppercase letter, one lowercase letter, and one number, and be at least 8 characters long.');" oninput="this.setCustomValidity('');">
+                    <label>
+                        <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                    </label>
+                </div>
+                <button class="mt-3 btn-login">Sign Up</button>
+                <a class="mt-3 mb-3 text-danger" id="signinbtn-sm">Already a client? <span>Log in!</span></a>
             </form>
         </div>
     </div>
