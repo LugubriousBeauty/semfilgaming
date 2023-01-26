@@ -21,12 +21,13 @@
         <!-- Nav desktop -->
         <div class="pt-2 d-flex justify-content-between align-items-center nav-home">
             <div>
-                <img class="header-logo ms-5 animate__animated animate__slideInDown" src="./assets/img/Semfil Logo.png" alt="Company Logo">
+                <img class="header-logo ms-5 animate__animated animate__slideInDown" src="./assets/img/Semfil Logo.png"
+                    alt="Company Logo">
             </div>
 
             <nav class="d-flex gap-5 p-4 nav-neumporphism animate__animated animate__slideInDown">
-                <li class="nav-neon"><a class="text-light link-home" href="#">Home</a></li>
-                <li class="nav-neon"><a class="text-light link-home" href="#">About Us</a></li>
+                <li class="nav-neon"><a class="text-light link-home" id="active" href="#">Home</a></li>
+                <li class="nav-neon"><a class="text-light link-home" href="./about.html">About Us</a></li>
                 <li class="nav-neon"><a href="#" class="text-light link-home">Contact</a></li>
             </nav>
 
@@ -42,8 +43,8 @@
                 <img class="image-navbar mb-4" src="./assets/img/Semfil Logo.png" alt="Image Navbar">
             </div>
             <div class="d-flex">
-                <img class="icon-nav" src="./assets/img/usuario_semfil.png" alt="logo user">
-                <a href="./login.html" class="ms-0">Login</a>
+                <img class="icon-nav" src="./assets/img/home.png" alt="logo user">
+                <a href="#" id="active-mobile" class="ms-0">Home</a>
             </div>
             <div class="d-flex">
                 <img class="icon-nav" src="./assets/img/about_us.png" alt="logo about us">
@@ -55,8 +56,14 @@
             </div>
         </div>
 
-        <div id="main">
-            <button class="openbtn rounded" onclick="openNav()">☰</button>
+        <div class="d-flex justify-content-between">
+            <div id="main">
+                <button class="openbtn rounded" onclick="openNav()">☰</button>
+            </div>
+
+            <div class="d-flex pe-3 pt-3 btn-login-hide">
+                <a class="btn-login btn-login-mb animate__animated animate__slideInDown" href="./login.html">Login</a>
+            </div>
         </div>
     </header>
 
@@ -90,7 +97,7 @@
             </div>
 
             <!-- Div para las cards -->
-            <div class="mt-4 rounded d-flex flex-wrap gap-3 justify-content-between">
+            <div class="mt-4 rounded d-flex flex-wrap gap-3 justify-content-around">
                 <div class="card">
                     <div class="d-flex justify-content-center">
                         <img class="card-img p-3 pb-0" src="./assets/img/Image_1_Carruousel.png" alt="Game 1">
@@ -102,7 +109,7 @@
                     <div class="card-footer">
                         <span class="text-title text-light">$499.49</span>
                         <div class="card-button">
-                            <svg class="svg-icon" fill="white" viewBox="0 0 20 20">
+                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
                                 <path
                                     d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
                                 </path>
@@ -128,7 +135,7 @@
                     <div class="card-footer">
                         <span class="text-title text-light">$499.49</span>
                         <div class="card-button">
-                            <svg class="svg-icon" fill="white" viewBox="0 0 20 20">
+                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
                                 <path
                                     d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
                                 </path>
@@ -154,7 +161,7 @@
                     <div class="card-footer">
                         <span class="text-title text-light">$499.49</span>
                         <div class="card-button">
-                            <svg class="svg-icon" fill="white" viewBox="0 0 20 20">
+                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
                                 <path
                                     d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
                                 </path>
@@ -180,7 +187,7 @@
                     <div class="card-footer">
                         <span class="text-title text-light">$499.49</span>
                         <div class="card-button">
-                            <svg class="svg-icon" fill="white" viewBox="0 0 20 20">
+                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
                                 <path
                                     d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
                                 </path>
@@ -201,17 +208,64 @@
         <!-- Aside para los articulos -->
         <aside class="aside-home rounded p-4 animate__animated animate__fadeInUp">
             <div>
-                <h4 class="text-light">Articles</h4>
-                <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit qui ut
-                    magnimagnam rem ab amet doloribus dicta totam, reiciendis autem reprehenderit maiores sunt id
-                    exercitationem voluptatibus! Explicabo, consequatur.</p>
+                <h4 class="text-light fs-3 text-center">Articles</h4>
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <img src="./assets/img/article_1.jpg" class="rounded img-article mb-3 mt-3" alt="article 1">
+                    <p class="text-light">The announcement that attracted the most attention was the confirmation of the event that Xbox will host in Los Angeles in the middle of the year. However, no explicit mention was made of E3 2023, which will finally return this year after 4 years of suspension due to the coronavirus (COVID-19).</p>
+                    <a class="text-light text-decoration-underline read-article" href="https://www.levelup.com/noticias/722191/Xbox-confirma-proximo-evento-en-Los-Angeles-pero-no-menciona-al-E3-2023" target="_blank">Read more</a>
+                    <hr class="hr-article">
+                </div>
+
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <img class="rounded img-article mb-3 mt-3" src="./assets/img/article_2.jpg" alt="article 2">
+                    <p class="text-light">In a post on its official blog, 4A Games sent a greeting to fans and provided information about the status of its employees and projects. First of all, the studio informed that most of its employees are still working in the Kiev office, while others are working from home and some others in other parts of Europe.</p>
+                    <a class="text-light text-decoration-underline read-article" href="https://www.levelup.com/noticias/722163/El-nuevo-Metro-estara-influenciado-por-la-guerra-en-Ucrania" target="_blank">Read more</a>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <a class="text-light fw-bold fs-5 text-decoration-underline" href="https://www.levelup.com/noticias" target="_blank"><p class="read-more">Read more news</p></a>
+                </div>
             </div>
         </aside>
     </main>
 
-    <footer class="d-flex justify-content-center">
-        <div class="nav-neumporphism footer-home mt-5 d-flex justify-content-center align-items-center">
-            <p class="text-light mb-0">Hello</p>
+    <footer class="d-flex justify-content-center mb-3">
+        <div class="nav-neumporphism footer-home mt-5">
+            <div class="d-flex justify-content-between align-items-center p-4 pb-2">
+                <div class="d-flex align-items-center">
+                    <img class="icon-footer pt-3 ps-3" src="./assets/img/Semfil Logo.png" alt="Logo Semfil">
+                    <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
+                </div>
+                <div class="d-flex flex-column nav-footer gap-3">
+                    <li class="text-light mb-0"><a class="text-light link-home" id="active" href="./home.html">Home</a>
+                    </li>
+                    <li class="text-light mb-0"><a class="text-light link-home" href="#">About Us</a></li>
+                    <li class="text-light mb-0"><a class="text-light link-home" href="#">Contact</a></li>
+                </div>
+                <div>
+                    <p class="text-light fs-5 text-center">FOLLOW US</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
+                                class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
+                        <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
+                                class="icons" src="./assets/img/instagram_icon.png" alt="instagram_icon"></a>
+                        <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
+                            class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
+                                alt="twitter_icon"></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-light fs-5 pe-4 text-call">CALL US</p>
+                    <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
+                </div>
+            </div>
+            <div>
+                <hr class="hr-footer">
+                <div class="d-flex justify-content-around footer-terms mt-3">
+                    <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
+                    <p class="text-light text-footer">TERMS AND CONDITIONS</p>
+                </div>
+            </div>
         </div>
     </footer>
 
