@@ -5,8 +5,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link rel="shortcut icon" href="./assets/img/about_us.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body>
+<body class="body-main">
+    <header>
+<!-- Nav desktop -->
+<div class="pt-2 d-flex justify-content-between align-items-center nav-home">
+    <div>
+        <img class="header-logo ms-5 animate__animated animate__slideInDown" src="./assets/img/Semfil Logo.png"
+            alt="Company Logo">
+    </div>
+
+    <nav class="d-flex gap-5 p-4 nav-neumporphism animate__animated animate__slideInDown">
+        <li class="nav-neon"><a class="text-light link-home" href="./home.html">Home</a></li>
+        <li class="nav-neon"><a class="text-light link-home" href="#" id="active" >About Us</a></li>
+        <li class="nav-neon"><a href="./contact.html" class="text-light link-home">Contact</a></li>
+    </nav>
+
+    <div class="d-flex gap-4">
+        <a class="btn-login me-5 animate__animated animate__slideInDown" href="./login.html">Login</a>
+    </div>
+</div>
+
+<!-- Nav Mobile -->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="d-flex justify-content-center">
+        <img class="image-navbar mb-4" src="./assets/img/Semfil Logo.png" alt="Image Navbar">
+    </div>
+    <div class="d-flex">
+        <img class="icon-nav" src="./assets/img/home.png" alt="logo user">
+        <a href="./home.html" class="ms-0">Home</a>
+    </div>
+    <div class="d-flex">
+        <img class="icon-nav" src="./assets/img/about_us.png" alt="logo about us">
+        <a href="#" id="active-mobile">About Us</a>
+    </div>
+    <div class="d-flex">
+        <img class="icon-nav" src="./assets/img/contact.png" alt="logo contact">
+        <a href="./contact.html">Contact</a>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between">
+    <div id="main">
+        <button class="openbtn rounded" onclick="openNav()">☰</button>
+    </div>
+
+    <div class="d-flex pe-3 pt-3 btn-login-hide">
+        <a class="btn-login btn-login-mb animate__animated animate__slideInDown" href="./login.html">Login</a>
+    </div>
+</div>
+    </header>
+    <main class="d-flex justify-content-center">
+        <article class="article-about rounded animate__animated animate__fadeInUp mx-auto">
+            <div class="d-flex align-items-center">
+                <div class="px-3 fs-5 text-about">
+                    <p class="text-light"><span class="fw-bold text-light">Our Vision: </span>For students to use higher-order thinking skills and to develop the skills necessary to research, design, produce, and communicate solutions to real world problems, to benefit their future and the future of society.</p>
     
+                    <p class="text-light"><span class="fw-bold text-light">Our Mission: </span>To provide students with the knowledge and skills that they will need as they move into college and careers, in order to solve the problems of the 21st Century and beyond.</p>
+                </div>
+                <div>
+                    <img class="img-about py-3 pe-3" src="./assets/img/about-image.png" alt="imagen-about">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <h5 class="fw-bold text-light fs-3 mb-5 mt-4">Development Team</h5>
+                <div class="d-flex gap-5 justify-content-center flex-wrap mb-4">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <a href="https://www.linkedin.com/in/luc%C3%ADa-vidal-9a9a43259/" target="_blank" class="icon-linkedin"><img class="img-linkedin" src="./assets/img/linkedin_icon.png" alt="linkedin Lu"></a>
+                        <p class="text-light fw-bold mb-1 mt-2">Role: Project Manager</p>
+                        <p class="text-light fw-bold">Lucía Vidal</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <a href="https://www.linkedin.com/in/fiorella-cejade/" target="_blank" class="icon-linkedin"><img class="img-linkedin" src="./assets/img/linkedin_icon.png" alt="linkedin Fiore"></a>
+                        <p class="text-light fw-bold mb-1 mt-2">Role: Backend Developer</p>
+                        <p class="text-light fw-bold">Fiorella Cejade</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <a href="https://www.linkedin.com/in/martin-araolaza-81a646246/" target="_blank" class="icon-linkedin"><img class="img-linkedin" src="./assets/img/linkedin_icon.png" alt="linkedin Martin"></a>
+                        <p class="text-light fw-bold mb-1 mt-2">Role: Backend Developer</p>
+                        <p class="text-light fw-bold">Martin Araolaza</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <a href="https://www.linkedin.com/in/sebastian-alfonso-901240218/" target="_blank" class="icon-linkedin"><img class="img-linkedin" src="./assets/img/linkedin_icon.png" alt="linkedin Sebas bad"></a>
+                        <p class="text-light fw-bold mb-1 mt-2">Role: Frontend Developer</p>
+                        <p class="text-light fw-bold">Sebastian Alfonso</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <a href="https://www.linkedin.com/in/sebastianvalbuenaacosta/" target="_blank" class="icon-linkedin"><img class="img-linkedin" src="./assets/img/linkedin_icon.png" alt="linkedin Sebas good"></a>
+                        <p class="text-light fw-bold mb-1 mt-2">Role: Frontend Developer</p>
+                        <p class="text-light fw-bold">Sebastian Valbuena</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="d-flex justify-content-center mb-3">
+        <div class="nav-neumporphism footer-home mt-5">
+            <div class="d-flex justify-content-between align-items-center p-4 pb-2">
+                <div class="d-flex align-items-center">
+                    <img class="icon-footer pt-3 ps-3" src="./assets/img/Semfil Logo.png" alt="Logo Semfil">
+                    <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
+                </div>
+                <div class="d-flex flex-column nav-footer gap-3">
+                    <li class="text-light mb-0"><a class="text-light link-home" href="./home.html">Home</a>
+                    </li>
+                    <li class="text-light mb-0"><a id="active" class="text-light link-home" href="#">About Us</a></li>
+                    <li class="text-light mb-0"><a class="text-light link-home" href="./contact.html">Contact</a></li>
+                </div>
+                <div>
+                    <p class="text-light fs-5 text-center">FOLLOW US</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
+                                class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
+                        <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
+                                class="icons" src="./assets/img/instagram.png" alt="instagram_icon"></a>
+                        <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
+                            class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
+                                alt="twitter_icon"></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-light fs-5 pe-4 text-call">CALL US</p>
+                    <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
+                </div>
+            </div>
+            <div>
+                <hr class="hr-footer">
+                <div class="d-flex justify-content-around footer-terms mt-3">
+                    <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
+                    <p class="text-light text-footer">TERMS AND CONDITIONS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script src="./assets/js/about.js"></script>
 </body>
 </html>

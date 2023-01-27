@@ -116,7 +116,7 @@ a {
 }
 
 #active-mobile {
-    color: #750505;
+    color: #ad0000;
 }
 
 /* Main */
@@ -743,4 +743,44 @@ a {
 .arrow-back:hover {
     transform: translateY(-25%);
     transition: 1s;
+}
+
+/* About */
+.article-about {
+    margin-top: 2.5rem;
+    background: rgba(255, 255, 255, 0.062);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    width: 77rem;
+    border: 2px solid rgba(255, 0, 34, 0.534);
+}
+.img-about {
+    width: 45rem;
+    border-radius: 25px;
+}
+
+.img-linkedin {
+    width: 3rem;
+}
+
+.icon-linkedin:hover {
+    transform: translateY(-20%);
+    transition: 1.5s;
+}
+
+@media (max-width: 900px) {
+    .article-about {
+        width: 22rem;
+        padding-bottom: 3rem;
+    }
+    .article-about > div {
+        flex-direction: column;
+    }.img-about {
+        margin-left: 1rem;
+        width: 20rem;
+    }
+    .text-about {
+        margin-top: 2rem;
+    }
 }
