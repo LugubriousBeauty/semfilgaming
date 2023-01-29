@@ -32,6 +32,11 @@ public class ClientPurchase {
         this.totalAmount = totalAmount;
     }
 
+    public void addPurchase(Purchase purchase){
+        purchase.setClientPurchase(this);
+        purchases.add(purchase);
+    }
+
 
     public Long getId() {
         return Id;

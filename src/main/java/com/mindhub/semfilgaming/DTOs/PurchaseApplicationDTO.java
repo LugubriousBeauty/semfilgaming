@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PurchaseApplicationDTO {
 
-    private LocalDate thurDate;
+    //private LocalDate thurDate;
 
     private String cardNumber;
 
@@ -13,20 +13,16 @@ public class PurchaseApplicationDTO {
 
     private List<ProductPurchaseApplicationDTO> listProductPurchase;
 
-    public PurchaseApplicationDTO(List<ProductPurchaseApplicationDTO> listProductPurchase, LocalDate thurDate,
+    public PurchaseApplicationDTO(List<ProductPurchaseApplicationDTO> listProductPurchase,
                                   String cardNumber, int cvv){
         this.listProductPurchase = listProductPurchase;
         this.cvv = cvv;
-        this.thurDate = thurDate;
+
         this.cardNumber = cardNumber;
     }
 
     public List<ProductPurchaseApplicationDTO> getListProductPurchase() {
         return listProductPurchase;
-    }
-
-    public LocalDate getThurDate() {
-        return thurDate;
     }
 
     public String getCardNumber() {
