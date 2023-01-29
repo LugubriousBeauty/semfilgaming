@@ -25,6 +25,7 @@ public class ClientDTO {
         this.password = client.getPassword();
         this.firstName = client.getFirstName();
         this.lastName = client.getLastName();
+        this.creationDate = client.getCreationDate();
         this.clientPurchases = client.getClientPurchases().stream()
                 .map(clientPurchase -> new ClientPurchaseDTO(clientPurchase))
                 .collect(Collectors.toList());
