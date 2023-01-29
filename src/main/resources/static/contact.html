@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="shortcut icon" href="./assets/img/contact.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body class="body-main">
+    <header>
+        <!-- Nav desktop -->
+        <div class="pt-2 d-flex justify-content-between align-items-center nav-home">
+            <div>
+                <img class="header-logo ms-5 animate__animated animate__slideInDown" src="./assets/img/Semfil Logo.png"
+                    alt="Company Logo">
+            </div>
+
+            <nav class="d-flex gap-5 p-4 nav-neumporphism animate__animated animate__slideInDown">
+                <li class="nav-neon"><a class="text-light link-home" href="./home.html">Home</a></li>
+                <li class="nav-neon"><a class="text-light link-home" href="./about.html">About Us</a></li>
+                <li class="nav-neon"><a href="#"  id="active" class="text-light link-home">Contact</a></li>
+            </nav>
+
+            <div class="d-flex gap-4">
+                <a class="btn-login me-5 animate__animated animate__slideInDown" href="./login.html">Login</a>
+            </div>
+        </div>
+
+        <!-- Nav Mobile -->
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div class="d-flex justify-content-center">
+                <img class="image-navbar mb-4" src="./assets/img/Semfil Logo.png" alt="Image Navbar">
+            </div>
+            <div class="d-flex">
+                <img class="icon-nav" src="./assets/img/home.png" alt="logo user">
+                <a href="./home.html" class="ms-0">Home</a>
+            </div>
+            <div class="d-flex">
+                <img class="icon-nav" src="./assets/img/about_us.png" alt="logo about us">
+                <a href="./about.html">About Us</a>
+            </div>
+            <div class="d-flex">
+                <img class="icon-nav" src="./assets/img/contact.png" alt="logo contact">
+                <a href="#" id="active-mobile">Contact</a>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <div id="main">
+                <button class="openbtn rounded" onclick="openNav()">☰</button>
+            </div>
+
+            <div class="d-flex pe-3 pt-3 btn-login-hide">
+                <a class="btn-login btn-login-mb animate__animated animate__slideInDown" href="./login.html">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="d-flex justify-content-center">
+        <article class="article-contact rounded animate__animated animate__fadeInUp mx-auto">
+            <div class="ms-3">
+                <img class="p-4 img-contact" src="./assets/img/image-contact.png" alt="Image contact">
+            </div>
+
+            <div>
+                <div class="d-flex justify-content-around section-contact">
+                    <div class="pb-4">
+                        <h5 class="text-light fw-bold fs-1 mb-4 text-center">Visit us!</h5>
+                        <iframe class="rounded iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d74301.36705024746!2d-58.47169907370337!3d-34.612062085462384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6700b6c562075e6d%3A0x90507b80e371891f!2sGaming%20House!5e0!3m2!1sen!2sco!4v1674768272169!5m2!1sen!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div>
+                        <h5 class="text-light fw-bold fs-1 text-center mb-4">Contact information</h5>
+                        <div class="text-center">
+                            <p class="text-light fs-5 fw-bold">Address: <span class="text-danger">Avenida Santa Fe 2450</span></p>
+                            <p class="text-light fs-5 fw-bold">Hours of operation: <span class="text-danger fw-bold">9am - 20pm</span></p>
+                            <p class="text-light fs-5 fw-bold">Number phone: <span class="text-danger">11 6183 5621</span></p>
+                            <p class="text-light fs-5 fw-bold">E-mail: <a class="text-danger" href="mailto:semfil.gaming@gmail.com">semfil.gaming@gmail.com</a></p>
+                        </div>
+                        <div>
+                            <h5 class="text-light fw-bold fs-1 text-center mb-4">Our social media</h5>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://www.facebook.com/GAMINGbible" target="_blank" ><img class="icon-contact" src="./assets/img/facebook_icon.png" alt="facebook-icon"></a>
+                                <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" ><img class="icon-contact" src="./assets/img/instagram.png" alt="instagram_icon"></a>
+                                <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"><img class="icon-contact" src="./assets/img/twitter_icon.png" alt="twitter_icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="d-flex justify-content-center mb-3">
+        <div class="nav-neumporphism footer-home mt-5">
+            <div class="d-flex justify-content-between align-items-center p-4 pb-2">
+                <div class="d-flex align-items-center">
+                    <img class="icon-footer pt-3 ps-3" src="./assets/img/Semfil Logo.png" alt="Logo Semfil">
+                    <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
+                </div>
+                <div class="d-flex flex-column nav-footer gap-3">
+                    <li class="text-light mb-0"><a class="text-light link-home" href="./home.html">Home</a>
+                    </li>
+                    <li class="text-light mb-0"><a class="text-light link-home" href="./about.html">About Us</a></li>
+                    <li class="text-light mb-0"><a class="text-light link-home" id="active"  href="./contact.html">Contact</a></li>
+                </div>
+                <div>
+                    <p class="text-light fs-5 text-center">FOLLOW US</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
+                                class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
+                        <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
+                                class="icons" src="./assets/img/instagram.png" alt="instagram_icon"></a>
+                        <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
+                            class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
+                                alt="twitter_icon"></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-light fs-5 pe-4 text-call">CALL US</p>
+                    <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
+                </div>
+            </div>
+            <div>
+                <hr class="hr-footer">
+                <div class="d-flex justify-content-around footer-terms mt-3">
+                    <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
+                    <p class="text-light text-footer">TERMS AND CONDITIONS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script src="./assets/js/contact.js"></script>
+</body>
+</html>
