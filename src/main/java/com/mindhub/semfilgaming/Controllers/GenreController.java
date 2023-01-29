@@ -3,6 +3,7 @@ package com.mindhub.semfilgaming.Controllers;
 import com.mindhub.semfilgaming.DTOs.GenreDTO;
 import com.mindhub.semfilgaming.Models.Genre;
 import com.mindhub.semfilgaming.Repositories.GenreRepository;
+import com.mindhub.semfilgaming.Service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +17,11 @@ import java.util.stream.Collectors;
 public class GenreController {
 
     @Autowired
-    GenreRepository genreRepository;
+    GenreService genreService;
 
     @GetMapping("/genres")
     public List<GenreDTO> getAllGenres(){
-
-        return genreRepository.findAll().stream().map(genre -> new GenreDTO(genre)).collect(Collectors.toList());
+        return genreService.getAllGenres().stream().map(genre -> new GenreDTO(genre)).collect(Collectors.toList());
     }
 
     @PostMapping("/products/genre")
@@ -29,9 +29,8 @@ public class GenreController {
         if (genreName.isBlank()){
             return new ResponseEntity<>("Missing genre's name", HttpStatus.FORBIDDEN);
         }
-
         Genre newGenre = new Genre(genreName);
-        genreRepository.save(newGenre);
+        genreService.saveGenre(newGenre);
         return new ResponseEntity<>("Genre created", HttpStatus.CREATED);
     }
 }

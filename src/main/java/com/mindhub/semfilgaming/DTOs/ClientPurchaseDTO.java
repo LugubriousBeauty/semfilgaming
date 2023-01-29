@@ -26,6 +26,7 @@ public class ClientPurchaseDTO {
                 .map(purchase -> new PurchaseDTO(purchase))
                 .collect(Collectors.toSet());
         this.totalAmount = clientPurchase.getTotalAmount();
+
     }
 
     public Set<PurchaseDTO> getPurchases() {

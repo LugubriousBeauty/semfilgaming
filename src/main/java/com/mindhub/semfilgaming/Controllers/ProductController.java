@@ -4,8 +4,7 @@ import com.mindhub.semfilgaming.DTOs.NewProductDTO;
 import com.mindhub.semfilgaming.DTOs.ProductDTO;
 import com.mindhub.semfilgaming.Models.*;
 import com.mindhub.semfilgaming.Repositories.*;
-import com.mindhub.semfilgaming.Service.GenreService;
-import com.mindhub.semfilgaming.Service.ProductService;
+import com.mindhub.semfilgaming.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,16 +24,13 @@ public class ProductController {
     GenreService genreService;
 
     @Autowired
-    CategoryRepository categoryRepository;
+    CategoryService categoryService;
 
     @Autowired
-    GenreRepository genreRepository;
+    ProductCategoryService productCategoryService;
 
     @Autowired
-    ProductCategoryRepository productCategoryRepository;
-
-    @Autowired
-    ProductGenreRepository productGenreRepository;
+    ProductGenreService productGenreService;
 
     @GetMapping("/products")
     public List<ProductDTO> getAllProducts(){
@@ -113,8 +109,8 @@ public class ProductController {
                 Genre temp = genreService.getGenreById(genreId);
                 temp.addGenre(newTempGenres);
                 newProduct.addGenre(newTempGenres);
-                genreRepository.save(temp);
-                productGenreRepository.save(newTempGenres);
+                genreService.saveGenre(temp);
+                productGenreService.saveProductGenre(newTempGenres);
                 productService.saveProduct(newProduct);
             });
         }
@@ -123,11 +119,11 @@ public class ProductController {
         if(!newProductDTO.getCategories().isEmpty()) {
             newProductDTO.getCategories().stream().forEach(categoryId -> {
                 ProductCategory newTempCategory = new ProductCategory();
-                Category temp = categoryRepository.findById(categoryId).orElse(null);
+                Category temp = categoryService.findCategoryById(categoryId);
                 temp.addCategories(newTempCategory);
                 newProduct.addCategories(newTempCategory);
-                categoryRepository.save(temp);
-                productCategoryRepository.save(newTempCategory);
+                categoryService.saveCategory(temp);
+                productCategoryService.saveProductCategory(newTempCategory);
                 productService.saveProduct(newProduct);
             });
         }

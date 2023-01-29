@@ -17,7 +17,6 @@ public class PurchaseApplicationDTO {
                                   String cardNumber, int cvv){
         this.listProductPurchase = listProductPurchase;
         this.cvv = cvv;
-
         this.cardNumber = cardNumber;
     }
 

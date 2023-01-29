@@ -3,6 +3,7 @@ package com.mindhub.semfilgaming.Controllers;
 
 import com.mindhub.semfilgaming.DTOs.ProductPurchaseApplicationDTO;
 import com.mindhub.semfilgaming.DTOs.PurchaseApplicationDTO;
+import com.mindhub.semfilgaming.DTOs.PurchaseDTO;
 import com.mindhub.semfilgaming.Models.Client;
 import com.mindhub.semfilgaming.Models.ClientPurchase;
 import com.mindhub.semfilgaming.Models.Product;
@@ -16,13 +17,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -39,6 +38,13 @@ public class PurchaseController {
 
     @Autowired
     ClientService clientService;
+
+    @GetMapping("/purchase")
+    public List<PurchaseDTO> getAllPurchase(){
+        return purchaseService.getAllPurchase().stream()
+                .map(purchase -> new PurchaseDTO(purchase))
+                .collect(Collectors.toList());
+    }
 
     @Transactional
     @PostMapping("/purchase")
