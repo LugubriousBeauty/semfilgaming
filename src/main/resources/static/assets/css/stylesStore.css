@@ -96,8 +96,7 @@ a {
     background-color: var(--btn-color);
     border-radius: 1em;
     outline: none;
-    box-shadow: 1px 1px 1em .25em var(--glow-color),
-        inset 0 0 .15em .02em var(--glow-color);
+    border: 2px solid rgba(255, 0, 34, 0.534);
     text-shadow: 0 0 .1em var(--glow-color);
     transition: all 0.3s;
 }
@@ -122,6 +121,7 @@ a {
 }
 
 #mySidebar .nav{
+    font-family: 'Rubik', sans-serif !important;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -162,6 +162,7 @@ a {
 
 
 .aside-home .nav-link {
+    font-family: 'Rubik', sans-serif;
     color: whitesmoke;
     transition: 0.4s;
 }
@@ -185,9 +186,7 @@ a {
     width: 4rem;
     height: 2.5rem;
     border-radius: 10px;
-    -webkit-box-shadow: 11px 13px 52px -12px rgba(255, 0, 34, 1);
-    -moz-box-shadow: 11px 13px 2002px -12px rgba(255, 0, 34, 1);
-    box-shadow: 1px 1px 22px 5px rgba(255, 0, 34, 0.534);
+    border: 2px solid rgba(255, 0, 34, 0.534);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
 }
@@ -353,6 +352,11 @@ a {
 .icons {
     width: 2rem;
 }
+
+.btn-login-mb {
+    height: 3rem;
+    padding-bottom: 0;
+}
 @media (max-width: 450px) {
 
 
@@ -434,6 +438,9 @@ a {
 }
 
 @media (min-width: 900px) {
+    .btn-login-hide {
+        display: none !important;
+    } 
     .sidebar {
         display: none !important;
     }
