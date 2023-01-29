@@ -3,15 +3,18 @@ package com.mindhub.semfilgaming.Controllers;
 
 import com.mindhub.semfilgaming.DTOs.ProductPurchaseApplicationDTO;
 import com.mindhub.semfilgaming.DTOs.PurchaseApplicationDTO;
+import com.mindhub.semfilgaming.Models.Client;
 import com.mindhub.semfilgaming.Models.ClientPurchase;
 import com.mindhub.semfilgaming.Models.Product;
 import com.mindhub.semfilgaming.Models.Purchase;
 import com.mindhub.semfilgaming.Service.ClientPurchaseService;
+import com.mindhub.semfilgaming.Service.ClientService;
 import com.mindhub.semfilgaming.Service.ProductService;
 import com.mindhub.semfilgaming.Service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,9 +37,15 @@ public class PurchaseController {
     @Autowired
     ClientPurchaseService clientPurchaseService;
 
+    @Autowired
+    ClientService clientService;
+
     @Transactional
     @PostMapping("/purchase")
-    public ResponseEntity<Object> purchasingProducts(@RequestBody PurchaseApplicationDTO purchaseApplicationDTO){
+    public ResponseEntity<Object> purchasingProducts(Authentication authentication,
+                                                     @RequestBody PurchaseApplicationDTO purchaseApplicationDTO){
+
+        Client tempClient = clientService.getClientByEmail(authentication.getName());
 
         //------------ Comprobamos que los datos no esten vacios -------
 
@@ -57,7 +66,10 @@ public class PurchaseController {
 
         Double amountPayment = 0D;
         ClientPurchase tempClientPurchase = new ClientPurchase(LocalDateTime.now(), amountPayment);
+        tempClient.addClientPurchase(tempClientPurchase);
         clientPurchaseService.saveClientPurchase(tempClientPurchase);
+        clientService.saveClient(tempClient);
+
 
         //------------ Persistencia de datos de ProductPurchase -----------
 

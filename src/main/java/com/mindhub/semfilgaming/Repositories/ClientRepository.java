@@ -8,6 +8,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
 public interface ClientRepository extends JpaRepository<Client, Long> {
-    @Query("SELECT c FROM Client c WHERE c.clientEmail = :clientEmail")
-    Client findByEmail(@Param("clientEmail") String clientEmail);
+
+    Client findByClientEmail(String clientEmail);
 }

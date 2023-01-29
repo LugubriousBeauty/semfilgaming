@@ -26,7 +26,7 @@ public class ClientServiceImplementation implements ClientService {
 
     @Override
     public Client getClientByEmail(String email) {
-        return clientRepository.findByEmail(email);
+        return clientRepository.findByClientEmail(email);
     }
 
     @Override

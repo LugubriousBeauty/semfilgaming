@@ -16,10 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
     @Autowired
     public ClientService clientService;
 
@@ -30,9 +26,11 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
             Client client = clientService.getClientByEmail(inputName);
             if (client != null) {
                 if (client.getFirstName().equals("admin")) {
-                    return new User(client.getClientEmail(), client.getPassword(), AuthorityUtils.createAuthorityList("ADMIN"));
+                    return new User(client.getClientEmail(), client.getPassword(),
+                            AuthorityUtils.createAuthorityList("ADMIN"));
                 }else{
-                    return new User(client.getClientEmail(), client.getPassword(), AuthorityUtils.createAuthorityList("CLIENT"));
+                    return new User(client.getClientEmail(), client.getPassword(),
+                            AuthorityUtils.createAuthorityList("CLIENT"));
                 }
             } else {
                 throw new UsernameNotFoundException("Unknown user: " + inputName);
@@ -40,6 +38,9 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
         });
     }
 
-
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
 
 }
