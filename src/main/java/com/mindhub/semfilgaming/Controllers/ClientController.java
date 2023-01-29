@@ -6,6 +6,7 @@ import com.mindhub.semfilgaming.Service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +34,11 @@ public class ClientController {
         return clientService.getAllClients().stream().map(ClientDTO::new).collect(Collectors.toList());
     }
 
+    @GetMapping("/clients/current")
+    public ClientDTO getCurrentClient(Authentication authentication){
+        return new ClientDTO(clientService.getClientByEmail(authentication.getName()));
+    }
+
     @PostMapping("/clients")
     public ResponseEntity<Object> registerClient(@RequestParam String firstName, @RequestParam String lastName,
                                                  @RequestParam String email, @RequestParam String password){
@@ -46,11 +52,8 @@ public class ClientController {
         }
 
         LocalDate localDate = LocalDate.now();
-        System.out.println(localDate);
 
         Client client = new Client(email, passwordEncoder.encode(password), firstName, lastName, localDate);
-        System.out.println(client);
-        System.out.println();
         clientService.saveClient(client);
 
         return new ResponseEntity<>("Success", HttpStatus.OK);

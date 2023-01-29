@@ -6,6 +6,8 @@ import com.mindhub.semfilgaming.Service.ClientPurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClientPurchaseServiceImplementation implements ClientPurchaseService {
 
@@ -15,5 +17,10 @@ public class ClientPurchaseServiceImplementation implements ClientPurchaseServic
     @Override
     public void saveClientPurchase(ClientPurchase clientPurchase) {
         clientPurchaseRepository.save(clientPurchase);
+    }
+
+    @Override
+    public List<ClientPurchase> getAllClientPurchase() {
+        return clientPurchaseRepository.findAll();
     }
 }
