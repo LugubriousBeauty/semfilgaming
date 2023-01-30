@@ -8,6 +8,7 @@ import com.mindhub.semfilgaming.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -130,6 +131,23 @@ public class ProductController {
 
         productService.saveProduct(newProduct);
         return new ResponseEntity<>("New product added successfully", HttpStatus.CREATED);
+    }
+
+    @PatchMapping("/products/add")
+    public ResponseEntity<Object> addProductoStock(Authentication authentication, @RequestParam Long Id,
+                                                   @RequestParam int amount){
+        Product selectedProduct = productService.getProductById(Id);
+        if(selectedProduct.equals(null)){
+            return new ResponseEntity<>("Product not found", HttpStatus.FORBIDDEN);
+        }
+        if(amount<=0){
+            return new ResponseEntity<>("Missing amount", HttpStatus.FORBIDDEN);
+        }
+
+        selectedProduct.setStock(selectedProduct.getStock()+amount);
+        productService.saveProduct(selectedProduct);
+
+        return new ResponseEntity<>("Stock recharged", HttpStatus.ACCEPTED);
     }
 
 

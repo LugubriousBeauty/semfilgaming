@@ -8,6 +8,7 @@ import com.mindhub.semfilgaming.Models.Client;
 import com.mindhub.semfilgaming.Models.ClientPurchase;
 import com.mindhub.semfilgaming.Models.Product;
 import com.mindhub.semfilgaming.Models.Purchase;
+import com.mindhub.semfilgaming.Repositories.ProductRepository;
 import com.mindhub.semfilgaming.Service.ClientPurchaseService;
 import com.mindhub.semfilgaming.Service.ClientService;
 import com.mindhub.semfilgaming.Service.ProductService;
@@ -19,12 +20,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.mindhub.semfilgaming.Utilities.PaymentMethod.cardPaymentMethod;
 
 @RestController
 @RequestMapping("/api")
@@ -41,6 +41,9 @@ public class PurchaseController {
 
     @Autowired
     ClientService clientService;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @GetMapping("/purchase")
     public List<PurchaseDTO> getAllPurchase(){
@@ -61,14 +64,11 @@ public class PurchaseController {
         if(purchaseApplicationDTO.equals(null)){
             return new ResponseEntity<>("Something is wrong, please recharge the app", HttpStatus.FORBIDDEN);
         }
-        if(purchaseApplicationDTO.getCardNumber().isBlank()){
-            return new ResponseEntity<>("Card number can't be empty", HttpStatus.FORBIDDEN);
-        }
-        if(purchaseApplicationDTO.getCvv()==0){
-            return  new ResponseEntity<>("Cvv is missing", HttpStatus.FORBIDDEN);
-        }
         if (purchaseApplicationDTO.getListProductPurchase().isEmpty()){
             return new ResponseEntity<>("Please choose at least one product", HttpStatus.FORBIDDEN);
+        }
+        if(purchaseApplicationDTO.getAccepted().equals(false)){
+            return new ResponseEntity<>("Something is wrong with the payment's method", HttpStatus.FORBIDDEN);
         }
 
         //------- Creamos la Instancia de compra -----
@@ -98,7 +98,9 @@ public class PurchaseController {
             selectedProduct.addPurchase(tempPurchase);
             tempClientPurchase.addPurchase(tempPurchase);
             clientPurchaseService.saveClientPurchase(tempClientPurchase);
-
+            selectedProduct.setStock(selectedProduct.getStock()-tempPurchase.getProductQuantity());
+            selectedProduct.setSalesHistory(selectedProduct.getSalesHistory()+tempPurchase.getProductQuantity());
+            productService.saveProduct(selectedProduct);
         });
 
         // ---- seteamos el valor total de la compra ------
@@ -110,14 +112,14 @@ public class PurchaseController {
                         .reduce((aDouble, aDouble2) -> aDouble + aDouble2).orElse(0D));
         clientPurchaseService.saveClientPurchase(tempClientPurchase);
 
-        String tempdesc = "Purchase realized on " + LocalDate.now() + " thanks for buying in our store";
+//        String tempdesc = "Purchase realized on " + LocalDate.now() + " thanks for buying in our store";
 
-        if(cardPaymentMethod( purchaseApplicationDTO.getCardNumber(),
-                purchaseApplicationDTO.getCvv(),
-                tempClientPurchase.getTotalAmount(), tempdesc)){
-            return new ResponseEntity<>("Successful purchase", HttpStatus.CREATED);
-        }else{
-            return new ResponseEntity<>("Something is wrong, check with your bank", HttpStatus.FORBIDDEN);
-        }
+//        Boolean aprov = cardPaymentMethod( purchaseApplicationDTO.getCardNumber(),
+//                purchaseApplicationDTO.getCvv(),
+//                tempClientPurchase.getTotalAmount(), tempdesc);
+
+
+        return new ResponseEntity<>("Successful purchase", HttpStatus.CREATED);
+
     }
 }

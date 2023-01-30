@@ -22,7 +22,7 @@ public class ProductDTO {
 
     private Double price, discount;
 
-    private int stock;
+    private int stock, salesHistory;
 
     private List<String> screenShoots, trailers;
 
@@ -47,6 +47,7 @@ public class ProductDTO {
         this.price = product.getPrice();
         this.rawBackground = product.getRawBackground();
         this.stock = product.getStock();
+        this.salesHistory = product.getSalesHistory();
         this.website = product.getWebsite();
         this.screenShoots = product.getScreenShoot();
         this.trailers = product.getTrailers();
@@ -126,5 +127,9 @@ public class ProductDTO {
 
     public List<ProductGenreDTO> getGenreDTOS() {
         return genreDTOS;
+    }
+
+    public int getSalesHistory() {
+        return salesHistory;
     }
 }

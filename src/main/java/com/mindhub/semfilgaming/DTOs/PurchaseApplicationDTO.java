@@ -5,30 +5,21 @@ import java.util.List;
 
 public class PurchaseApplicationDTO {
 
-    //private LocalDate thurDate;
-
-    private String cardNumber;
-
-    private int cvv;
+    private Boolean accepted;
 
     private List<ProductPurchaseApplicationDTO> listProductPurchase;
 
-    public PurchaseApplicationDTO(List<ProductPurchaseApplicationDTO> listProductPurchase,
-                                  String cardNumber, int cvv){
+    public PurchaseApplicationDTO(List<ProductPurchaseApplicationDTO> listProductPurchase, Boolean accepted){
         this.listProductPurchase = listProductPurchase;
-        this.cvv = cvv;
-        this.cardNumber = cardNumber;
+        this.accepted = accepted;
+
     }
 
     public List<ProductPurchaseApplicationDTO> getListProductPurchase() {
         return listProductPurchase;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public int getCvv() {
-        return cvv;
+    public Boolean getAccepted() {
+        return accepted;
     }
 }
