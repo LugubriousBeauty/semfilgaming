@@ -115,6 +115,14 @@ a {
         inset 0 0 .5em .25em var(--glow-color);
 }
 
+.title-store {
+    z-index: 1;
+}
+
+.nav-index {
+    z-index: 100;
+}
+
 #mySidebar{
     display: flex;
     flex-direction: column;
