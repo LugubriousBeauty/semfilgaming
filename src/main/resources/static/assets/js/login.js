@@ -1,3 +1,71 @@
+const { createApp } = Vue
+
+const app = createApp({
+	data() {
+		return {
+			firstName: '',
+			lastName: '',
+			email: '',
+			password: ''
+		}
+	},
+	methods: {
+		login() {
+			axios.post("/api/login", `email=${this.email}&password=${this.password}`)
+				.then(() => console.log('ok'))
+				.catch(error => console.log(error))
+		},
+		register() {
+			axios.post("/api/clients", `firstName=${this.firstName}&lastName=${this.lastName}&email=${this.email}&password=${this.password}`)
+				.then(() => console.log('ok'))
+				.catch(error => console.log(error))
+		}	
+	}
+})
+
+app.mount("#app")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const signUpButtonSm = document.getElementById('signupbtn-sm');
