@@ -19,9 +19,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static com.mindhub.semfilgaming.Utilities.PaymentMethod.cardPaymentMethod;
 
 @RestController
 @RequestMapping("/api")
@@ -107,6 +110,14 @@ public class PurchaseController {
                         .reduce((aDouble, aDouble2) -> aDouble + aDouble2).orElse(0D));
         clientPurchaseService.saveClientPurchase(tempClientPurchase);
 
-        return new ResponseEntity<>("Successful purchase", HttpStatus.CREATED);
+        String tempdesc = "Purchase realized on " + LocalDate.now() + " thanks for buying in our store";
+
+        if(cardPaymentMethod( purchaseApplicationDTO.getCardNumber(),
+                purchaseApplicationDTO.getCvv(),
+                tempClientPurchase.getTotalAmount(), tempdesc)){
+            return new ResponseEntity<>("Successful purchase", HttpStatus.CREATED);
+        }else{
+            return new ResponseEntity<>("Something is wrong, check with your bank", HttpStatus.FORBIDDEN);
+        }
     }
 }
