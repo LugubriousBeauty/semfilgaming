@@ -5,6 +5,7 @@ import com.mindhub.semfilgaming.Service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.GlobalAuthenticationConfigurerAdapter;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -25,16 +26,17 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
         auth.userDetailsService(inputName-> {
             Client client = clientService.getClientByEmail(inputName);
             if (client != null) {
-                if (client.getFirstName().equals("admin")) {
-                    return new User(client.getClientEmail(), client.getPassword(),
-                            AuthorityUtils.createAuthorityList("ADMIN"));
-                }else{
-                    return new User(client.getClientEmail(), client.getPassword(),
-                            AuthorityUtils.createAuthorityList("CLIENT"));
+                if(!client.isEnabled()) {
+                    throw new DisabledException("User not enabled");
                 }
-            } else {
-                throw new UsernameNotFoundException("Unknown user: " + inputName);
+                String authority = "CLIENT";
+                if(client.isAdmin()) authority = "ADMIN";
+
+                return new User(client.getClientEmail(), client.getPassword(), AuthorityUtils.createAuthorityList(authority));
+
             }
+            throw new UsernameNotFoundException("Unknown user");
+
         });
     }
 

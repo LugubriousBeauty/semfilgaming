@@ -26,6 +26,8 @@ public class Client {
 
     private LocalDate creationDate;
 
+    private boolean isEnabled, isAdmin;
+
     public Client (){}
 
     public Client(String clientEmail, String password, String firstName, String lastName, LocalDate creationDate){
@@ -44,6 +46,22 @@ public class Client {
     public void addClientPurchase(ClientPurchase clientPurchase){
         clientPurchase.setClient(this);
         clientPurchases.add(clientPurchase);
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     public Long getId() {
