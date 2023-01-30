@@ -28,15 +28,15 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
             if (client != null) {
                 if(!client.isEnabled()) {
                     throw new DisabledException("User not enabled");
-                } else {
-                    String authority = "CLIENT";
-                    client.setAdmin(false);
-                    clientService.saveClient(client);
-                    return new User(client.getClientEmail(), client.getPassword(), AuthorityUtils.createAuthorityList(authority));
                 }
-            } else {
-                throw new UsernameNotFoundException("Unknown user");
+                String authority = "CLIENT";
+                if(client.isAdmin()) authority = "ADMIN";
+
+                return new User(client.getClientEmail(), client.getPassword(), AuthorityUtils.createAuthorityList(authority));
+
             }
+            throw new UsernameNotFoundException("Unknown user");
+
         });
     }
 
