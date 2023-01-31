@@ -20,6 +20,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -112,6 +113,7 @@ public class PurchaseController {
 
         // ---- creamos el PDF del ticket ----------- //
         downloadPdf(listProductPurchase, amount);
+
 
         return new ResponseEntity<>("Successful purchase", HttpStatus.CREATED);
     }

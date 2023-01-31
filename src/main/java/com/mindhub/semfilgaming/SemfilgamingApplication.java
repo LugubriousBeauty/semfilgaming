@@ -2,21 +2,33 @@ package com.mindhub.semfilgaming;
 
 import com.mindhub.semfilgaming.Models.*;
 import com.mindhub.semfilgaming.Repositories.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootApplication
 public class SemfilgamingApplication {
+	private final ClientRepository clientRepository;
+
+
+
+	public SemfilgamingApplication(ClientRepository clientRepository) {
+		this.clientRepository = clientRepository;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SemfilgamingApplication.class, args);
 	}
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Bean
 	public CommandLineRunner initData(ProductRepository productRepository, CategoryRepository categoryRepository,
@@ -88,13 +100,34 @@ public class SemfilgamingApplication {
 					screenShootList,
 					trailersList
 					);
+			Client lucia = new Client("lucividal09@gmail.com", passwordEncoder.encode("caca"), "Lucia", "Vidal" , LocalDate.now());
+			lucia.setEnabled(true);
+			clientRepository.save(lucia);
 
 			Genre action = new Genre("Action");
+			Genre indie = new Genre("Indie");
+			Genre adventure = new Genre("Adventure");
+			Genre massivelyMultiplayer = new Genre("Massively Multiplayer");
+			Genre rpg = new Genre("RPG");
 			Genre simulation = new Genre("simulation");
+			Genre strategy = new Genre("strategy");
+			Genre casual = new Genre("casual");
+			Genre sports = new Genre("sports");
+			Genre racing = new Genre("racing");
+
+
 			Category rol = new Category("Rol");
 			Category shooter = new Category("shooter");
 			genreRepository.save(action);
+			genreRepository.save(indie);
+			genreRepository.save(adventure);
+			genreRepository.save(massivelyMultiplayer);
+			genreRepository.save(rpg);
 			genreRepository.save(simulation);
+			genreRepository.save(strategy);
+			genreRepository.save(casual);
+			genreRepository.save(sports);
+			genreRepository.save(racing);
 			categoryRepository.save(shooter);
 			categoryRepository.save(rol);
 			ProductCategory first = new ProductCategory();
