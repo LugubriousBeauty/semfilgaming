@@ -34,21 +34,27 @@ const app = createApp({
                     popup: 'my-swal'
                 },
                 html: `
-                    <h2 class="text-light fw-bold text-center mb-0">${game.gameName}</h2>
-                    <div class="d-flex justify-content-center">
-                        <video class="rounded mt-1" src="${game.trailers}" width="800" autoplay height="600"></video>
-                    </div>
-                    <p class="text-light">${game.desc}</p>
-                    <div class="d-flex px-2 gap-1 flex-wrap">
-                        <div class="text-light">
-                            ${game.minimumReq}
+                    <div class="div-card">
+                        <div>
+                            <h2 class="text-light fw-bold text-center mb-0">${game.gameName}</h2>
+                            <div class="d-flex justify-content-center">
+                                <video class="rounded mt-3 video-card" src="${game.trailers}" width="800" autoplay height="600"></video>
+                            </div>
                         </div>
-
-                        <div class="text-light">
-                            ${game.recommendedReq}
+                        <div class="d-flex mx-auto flex-column align-items-center justify-content-center">
+                        <p class="text-light mt-4">${game.desc}</p>
+                        <div class="d-flex px-2 gap-1 flex-wrap">
+                            <div class="text-light">
+                                ${game.minimumReq}
+                            </div>
+    
+                            <div class="text-light">
+                                ${game.recommendedReq}
+                            </div>
+                        </div>
+                        <button class="btn-login mt-4">${genreNameObject.genreName}</button>
                         </div>
                     </div>
-                    <button class="btn-login mt-4">${genreNameObject.genreName}</button>
                     `,
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'

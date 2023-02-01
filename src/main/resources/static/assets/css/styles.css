@@ -786,8 +786,6 @@ a {
 }
 
 
-
-
 .swal2-styled.swal2-confirm.swalBtnColor {
     height: 4rem;
     width: 4rem;
@@ -805,4 +803,17 @@ a {
     background: rgba( 255, 255, 255, 0.05 );
     backdrop-filter: blur( 6px );
     -webkit-backdrop-filter: blur( 6px );
+}
+
+@media (max-width: 900px) {
+    .my-swal {
+        width: 70vw;
+    }
+    .video-card {
+        height: 9rem;
+        width: 90vw;
+    }
+    .div-card {
+        width: 60vw;
+    }
 }

@@ -12,12 +12,12 @@ const app = createApp({
 	methods: {
 		login() {
 			axios.post("/api/login", `email=${this.email}&password=${this.password}`)
-				.then(() => console.log('ok'))
+				.then(() => location.href = '../../store.html')
 				.catch(error => console.log(error))
 		},
 		register() {
 			axios.post("/api/clients", `firstName=${this.firstName}&lastName=${this.lastName}&email=${this.email}&password=${this.password}`)
-				.then(() => console.log('ok'))
+				.then(() => location.href = '../../store.html')
 				.catch(error => console.log(error))
 		}	
 	}
