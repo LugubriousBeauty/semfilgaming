@@ -789,6 +789,9 @@ a {
 
 
 .swal2-styled.swal2-confirm.swalBtnColor {
+    height: 4rem;
+    width: 4rem;
+    font-weight: bold;
     background-color: #a81515;
 }
 
