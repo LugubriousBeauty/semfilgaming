@@ -109,7 +109,6 @@ public class SemfilgamingApplication {
 			action.addGenre(firstGenre);
 
 
-
 			productRepository.save(valheim);
 			valheim.addGenre(firstGenre);
 			valheim.addCategories(first);
@@ -123,53 +122,46 @@ public class SemfilgamingApplication {
 			productRepository.save(valheim);
 
 
-
-
-
-
-
 //			valheim.addCategory(rol);
 //			categoryRepository.save(rol);
 //			productRepository.save(valheim);
 
+//			Product skyrim = new Product("Winner of more than 200 Game of the Year Awards, " +
+//					"Skyrim Special Edition brings the epic fantasy to life in stunning detail. " +
+//					"The Special Edition includes the critically acclaimed game and add-ons with " +
+//					"all-new features like remastered art and effects, volumetric god rays, dynamic " +
+//					"depth of field, screen-space reflections, and more. Skyrim Special Edition also" +
+//					" brings the full power of mods to the PC and consoles.  New quests, environments," +
+//					" characters, dialogue, armor, weapons and more – with Mods, there are no limits to what" +
+//					" you can experience.",
+//					"Winner of more than 200 Game of the Year Awards, Skyrim Special Edition brings" +
+//							" the epic fantasy to life in stunning detail. The Special Edition " +
+//							"includes the critically acclaimed game and add-ons with all-new features " +
+//							"like remastered art and effects, volumetric god rays, dynamic depth of field, " +
+//							"screen-space reflections, and more.",
+//					"<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong>" +
+//							" Windows 7/8.1/10 (64-bit Version)<br></li><li><strong>Processor:" +
+//							"</strong> Intel i5-750/AMD Phenom II X4-945<br></li><li><strong>Memory:" +
+//							"</strong> 8 GB RAM<br></li><li><strong>Graphics:</strong> NVIDIA GTX 470 " +
+//							"1GB /AMD HD 7870 2GB<br></li><li><strong>Storage:</strong> 12 GB available " +
+//							"space</li></ul>",
+//					"<strong>Recommended:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong> " +
+//							"Windows 7/8.1/10 (64-bit Version)<br></li><li><strong>Processor:" +
+//							"</strong> Intel i5-2400/AMD FX-8320<br></li><li><strong>Memory:</strong> " +
+//							"8 GB RAM<br></li><li><strong>Graphics:</strong> NVIDIA GTX 780 3GB /AMD " +
+//							"R9 290 4GB<br></li><li><strong>Storage:</strong> 12 GB available " +
+//							"space</li></ul>",
+//					"The Elder Scrolls V: Skyrim Special Edition",
+//					"https://cdn.akamai.steamstatic.com/steam/apps/489830/header.jpg?t=1650909796",
+//					"",
+//					"https://cdn.akamai.steamstatic.com/steam/apps/489830/page_bg_generated_v6b.jpg?t=1650909796",
+//					"https://cdn.akamai.steamstatic.com/steam/apps/489830/page.bg.jpg?t=1650909796",
+//					7400D,
+//					1D,
+//					10);
+//			productRepository.save(skyrim);
 
-
-			/*Product skyrim = new Product("Winner of more than 200 Game of the Year Awards, " +
-					"Skyrim Special Edition brings the epic fantasy to life in stunning detail. " +
-					"The Special Edition includes the critically acclaimed game and add-ons with " +
-					"all-new features like remastered art and effects, volumetric god rays, dynamic " +
-					"depth of field, screen-space reflections, and more. Skyrim Special Edition also" +
-					" brings the full power of mods to the PC and consoles.  New quests, environments," +
-					" characters, dialogue, armor, weapons and more – with Mods, there are no limits to what" +
-					" you can experience.",
-					"Winner of more than 200 Game of the Year Awards, Skyrim Special Edition brings" +
-							" the epic fantasy to life in stunning detail. The Special Edition " +
-							"includes the critically acclaimed game and add-ons with all-new features " +
-							"like remastered art and effects, volumetric god rays, dynamic depth of field, " +
-							"screen-space reflections, and more.",
-					"<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong>" +
-							" Windows 7/8.1/10 (64-bit Version)<br></li><li><strong>Processor:" +
-							"</strong> Intel i5-750/AMD Phenom II X4-945<br></li><li><strong>Memory:" +
-							"</strong> 8 GB RAM<br></li><li><strong>Graphics:</strong> NVIDIA GTX 470 " +
-							"1GB /AMD HD 7870 2GB<br></li><li><strong>Storage:</strong> 12 GB available " +
-							"space</li></ul>",
-					"<strong>Recommended:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong> " +
-							"Windows 7/8.1/10 (64-bit Version)<br></li><li><strong>Processor:" +
-							"</strong> Intel i5-2400/AMD FX-8320<br></li><li><strong>Memory:</strong> " +
-							"8 GB RAM<br></li><li><strong>Graphics:</strong> NVIDIA GTX 780 3GB /AMD " +
-							"R9 290 4GB<br></li><li><strong>Storage:</strong> 12 GB available " +
-							"space</li></ul>",
-					"The Elder Scrolls V: Skyrim Special Edition",
-					"https://cdn.akamai.steamstatic.com/steam/apps/489830/header.jpg?t=1650909796",
-					"",
-					"https://cdn.akamai.steamstatic.com/steam/apps/489830/page_bg_generated_v6b.jpg?t=1650909796",
-					"https://cdn.akamai.steamstatic.com/steam/apps/489830/page.bg.jpg?t=1650909796",
-					7400D,
-					1D,
-					10);
-			productRepository.save(skyrim);
-
-			Product sims = new Product(
+			/*Product sims = new Product(
 					"Da rienda suelta a tu imaginación y crea un mundo único de Sims a " +
 							"tu imagen y semejanza. Descárgalo gratis y personaliza todos los " +
 							"detalles, desde tus Sims a sus hogares y mucho más. Elige el aspecto, " +

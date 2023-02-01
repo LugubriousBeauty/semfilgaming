@@ -195,10 +195,13 @@ a {
 }
 
 .card {
+    padding-bottom: 1rem;
     width: 290px;
-    height: 340px;
+    height: 32.5rem;
     padding: .8em;
-    background: #3534347e;
+        background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
     border-color: rgba(255, 0, 34, 0.534);
     overflow: visible;
 }
@@ -780,4 +783,23 @@ a {
 .arrow-back:hover {
     transform: translateY(-25%);
     transition: 1s;
+}
+
+
+
+
+.swal2-styled.swal2-confirm.swalBtnColor {
+    background-color: #a81515;
+}
+
+.description-card {
+    height: 8rem;
+}
+
+.my-swal {
+    width: 50vw;
+    border: 2px solid rgba(255, 0, 34, 0.534);
+    background: rgba( 255, 255, 255, 0.05 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
 }

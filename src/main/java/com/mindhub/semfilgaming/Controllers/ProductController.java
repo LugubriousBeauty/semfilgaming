@@ -64,9 +64,9 @@ public class ProductController {
         if(newProductDTO.getImageHeader().isBlank()){
             return new ResponseEntity<>("Missing game's header picture", HttpStatus.FORBIDDEN);
         }
-        if(newProductDTO.getCategories().isEmpty()){
+        /*if(newProductDTO.getCategories().isEmpty()){
             return new ResponseEntity<>("Missing game's category", HttpStatus.FORBIDDEN);
-        }
+        }*/
         if(newProductDTO.getGenres().isEmpty()){
             return new ResponseEntity<>("Missing game's genre", HttpStatus.FORBIDDEN);
         }
@@ -120,7 +120,7 @@ public class ProductController {
         }
 
         // ---------- Asignamos las categorias ------
-        if(!newProductDTO.getCategories().isEmpty()) {
+       /* if(!newProductDTO.getCategories().isEmpty()) {
             newProductDTO.getCategories().stream().forEach(categoryId -> {
                 ProductCategory newTempCategory = new ProductCategory();
                 Category temp = categoryRepository.findById(categoryId).orElse(null);
@@ -130,11 +130,9 @@ public class ProductController {
                 productCategoryRepository.save(newTempCategory);
                 productService.saveProduct(newProduct);
             });
-        }
+        }*/
 
         productService.saveProduct(newProduct);
         return new ResponseEntity<>("New product added successfully", HttpStatus.CREATED);
     }
-
-
 }

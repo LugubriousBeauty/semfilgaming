@@ -7,273 +7,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="shortcut icon" href="./assets/img/SemfilLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<body class="body-main">
-    <header>
-        <!-- Nav desktop -->
-        <div class="pt-2 d-flex justify-content-between align-items-center nav-home">
-            <div>
-                <img class="header-logo ms-2 animate__animated animate__slideInDown" src="./assets/img/SemfilLogo.png"
-                    alt="Company Logo">
-            </div>
-
-            <nav class="d-flex gap-5 p-4 me-5 nav-neumporphism animate__animated animate__slideInDown">
-                <li class="nav-neon"><a class="text-light link-home" id="active" href="#">Home</a></li>
-                <li class="nav-neon"><a class="text-light link-home" href="./about.html">About Us</a></li>
-                <li class="nav-neon"><a href="./contact.html" class="text-light link-home">Contact</a></li>
-            </nav>
-
-            <div class="d-flex gap-4">
-                <a class="btn-login me-5 animate__animated animate__slideInDown" href="./login.html">Login</a>
-            </div>
-        </div>
-
-        <!-- Nav Mobile -->
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <div class="d-flex justify-content-center">
-                <img class="image-navbar mb-4" src="./assets/img/SemfilLogo.png" alt="Image Navbar">
-            </div>
-            <div class="d-flex">
-                <img class="icon-nav" src="./assets/img/home.png" alt="logo user">
-                <a href="#" id="active-mobile" class="ms-0">Home</a>
-            </div>
-            <div class="d-flex">
-                <img class="icon-nav" src="./assets/img/about_us.png" alt="logo about us">
-                <a href="./abount.html">About Us</a>
-            </div>
-            <div class="d-flex">
-                <img class="icon-nav" src="./assets/img/contact.png" alt="logo contact">
-                <a href="./contact.html">Contact</a>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-between">
-            <div id="main">
-                <button class="openbtn rounded" onclick="openNav()">☰</button>
-            </div>
-
-            <div class="d-flex pe-3 pt-3 btn-login-hide">
-                <a class="btn-login btn-login-mb animate__animated animate__slideInDown" href="./login.html">Login</a>
-            </div>
-        </div>
-    </header>
-
-    <h2 class="text-light text-center rounded animate__animated animate__fadeInUp">Welcome to <span class="text-danger">Semfil </span>Gaming</h2>
-    <main class="d-flex gap-4 main-home">
-        <article class="p-4 article-home rounded animate__animated animate__fadeInUp">
-            <!-- Div para el carrousel -->
-            <div>
-                <div id="carouselExampleAutoplaying" class="carousel slide rounded" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <img src="./assets/img/Image_1_Carruousel.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="./assets/img/Image_2_Carrousel.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="./assets/img/Image_3_Carrousel.png" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Div para las cards -->
-            <div class="mt-4 rounded d-flex flex-wrap gap-3 justify-content-around">
-                <div class="card">
-                    <div class="d-flex justify-content-center">
-                        <img class="card-img p-3 pb-0" src="./assets/img/Image_1_Carruousel.png" alt="Game 1">
-                    </div>
-                    <div class="card-info">
-                        <p class="text-title text-light">Title Game</p>
-                        <p class="text-light">Game Description</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title text-light">$499.49</span>
-                        <div class="card-button">
-                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
-                                <path
-                                    d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                                </path>
-                                <path
-                                    d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                                </path>
-                                <path
-                                    d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="d-flex justify-content-center">
-                        <img class="card-img p-3 pb-0" src="./assets/img/Image_1_Carruousel.png" alt="Game 1">
-                    </div>
-                    <div class="card-info">
-                        <p class="text-title text-light">Title Game</p>
-                        <p class="text-light">Game Description</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title text-light">$499.49</span>
-                        <div class="card-button">
-                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
-                                <path
-                                    d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                                </path>
-                                <path
-                                    d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                                </path>
-                                <path
-                                    d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="d-flex justify-content-center">
-                        <img class="card-img p-3 pb-0" src="./assets/img/Image_1_Carruousel.png" alt="Game 1">
-                    </div>
-                    <div class="card-info">
-                        <p class="text-title text-light">Title Game</p>
-                        <p class="text-light">Game Description</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title text-light">$499.49</span>
-                        <div class="card-button">
-                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
-                                <path
-                                    d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                                </path>
-                                <path
-                                    d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                                </path>
-                                <path
-                                    d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="d-flex justify-content-center">
-                        <img class="card-img p-3 pb-0" src="./assets/img/Image_1_Carruousel.png" alt="Game 1">
-                    </div>
-                    <div class="card-info">
-                        <p class="text-title text-light">Title Game</p>
-                        <p class="text-light">Game Description</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title text-light">$499.49</span>
-                        <div class="card-button">
-                            <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
-                                <path
-                                    d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                                </path>
-                                <path
-                                    d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                                </path>
-                                <path
-                                    d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </article>
-
-        <!-- Aside para los articulos -->
-        <aside class="aside-home rounded p-4 animate__animated animate__fadeInUp">
-            <div>
-                <h4 class="text-light fs-3 text-center">Articles</h4>
-                <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img src="./assets/img/article_1.jpg" class="rounded img-article mb-3 mt-3" alt="article 1">
-                    <p class="text-light">The announcement that attracted the most attention was the confirmation of the event that Xbox will host in Los Angeles in the middle of the year. However, no explicit mention was made of E3 2023, which will finally return this year after 4 years of suspension due to the coronavirus (COVID-19).</p>
-                    <a class="text-light text-decoration-underline read-article" href="https://www.levelup.com/noticias/722191/Xbox-confirma-proximo-evento-en-Los-Angeles-pero-no-menciona-al-E3-2023" target="_blank">Read more</a>
-                    <hr class="hr-article">
-                </div>
-
-                <div class="d-flex flex-column align-items-center justify-content-center">
-                    <img class="rounded img-article mb-3 mt-3" src="./assets/img/article_2.jpg" alt="article 2">
-                    <p class="text-light">In a post on its official blog, 4A Games sent a greeting to fans and provided information about the status of its employees and projects. First of all, the studio informed that most of its employees are still working in the Kiev office, while others are working from home and some others in other parts of Europe.</p>
-                    <a class="text-light text-decoration-underline read-article" href="https://www.levelup.com/noticias/722163/El-nuevo-Metro-estara-influenciado-por-la-guerra-en-Ucrania" target="_blank">Read more</a>
-                </div>
-
-                <div class="mt-5 text-center">
-                    <a class="text-light fw-bold fs-5 text-decoration-underline" href="https://www.levelup.com/noticias" target="_blank"><p class="read-more">Read more news</p></a>
-                </div>
-            </div>
-        </aside>
-    </main>
-
-    <footer class="d-flex justify-content-center mb-3">
-        <div class="nav-neumporphism footer-home mt-5">
-            <div class="d-flex justify-content-between align-items-center p-4 pb-2">
-                <div class="d-flex align-items-center">
-                    <img class="icon-footer pt-3 ps-3" src="./assets/img/SemfilLogo.png" alt="Logo Semfil">
-                    <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
-                </div>
-                <div class="d-flex flex-column nav-footer gap-3">
-                    <li class="text-light mb-0"><a class="text-light link-home" id="active" href="#">Home</a>
-                    </li>
-                    <li class="text-light mb-0"><a class="text-light link-home" href="./about.html">About Us</a></li>
-                    <li class="text-light mb-0"><a class="text-light link-home" href="./contact.html">Contact</a></li>
-                </div>
+<body>
+    <div id="content" class="body-main" v-cloak>
+        <header>
+            <!-- Nav desktop -->
+            <div class="pt-2 d-flex justify-content-between align-items-center nav-home">
                 <div>
-                    <p class="text-light fs-5 text-center">FOLLOW US</p>
-                    <div class="d-flex gap-2">
-                        <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
-                                class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
-                        <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
-                                class="icons" src="./assets/img/instagram.png" alt="instagram_icon"></a>
-                        <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
-                            class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
-                                alt="twitter_icon"></a>
+                    <img class="header-logo ms-2 animate__animated animate__slideInDown" src="./assets/img/SemfilLogo.png"
+                        alt="Company Logo">
+                </div>
+    
+                <nav class="d-flex gap-5 p-4 me-5 nav-neumporphism animate__animated animate__slideInDown">
+                    <li class="nav-neon"><a class="text-light link-home" id="active" href="#">Home</a></li>
+                    <li class="nav-neon"><a class="text-light link-home" href="./about.html">About Us</a></li>
+                    <li class="nav-neon"><a href="./contact.html" class="text-light link-home">Contact</a></li>
+                </nav>
+    
+                <div class="d-flex gap-4">
+                    <a class="btn-login me-5 animate__animated animate__slideInDown" href="./login.html">Login</a>
+                </div>
+            </div>
+    
+            <!-- Nav Mobile -->
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <div class="d-flex justify-content-center">
+                    <img class="image-navbar mb-4" src="./assets/img/SemfilLogo.png" alt="Image Navbar">
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/home.png" alt="logo user">
+                    <a href="#" id="active-mobile" class="ms-0">Home</a>
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/about_us.png" alt="logo about us">
+                    <a href="./abount.html">About Us</a>
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/contact.png" alt="logo contact">
+                    <a href="./contact.html">Contact</a>
+                </div>
+            </div>
+    
+            <div class="d-flex justify-content-between">
+                <div id="main">
+                    <button class="openbtn rounded" onclick="openNav()">☰</button>
+                </div>
+    
+                <div class="d-flex pe-3 pt-3 btn-login-hide">
+                    <a class="btn-login btn-login-mb animate__animated animate__slideInDown" href="./login.html">Login</a>
+                </div>
+            </div>
+        </header>
+    
+        <h2 class="text-light text-center rounded animate__animated animate__fadeInUp">Welcome to <span class="text-danger">Semfil </span>Gaming</h2>
+        <main class="d-flex gap-4 main-home">
+            <article class="p-4 article-home rounded animate__animated animate__fadeInUp">
+                <!-- Div para el carrousel -->
+                <div>
+                    <div id="carouselExampleAutoplaying" class="carousel slide rounded" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded">
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="./assets/img/Image_1_Carruousel.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="./assets/img/Image_2_Carrousel.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="./assets/img/Image_3_Carrousel.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Div para las cards -->
+                <div class="mt-4 rounded d-flex flex-wrap gap-3 justify-content-around">
+                    <div class="card" v-for="game in fourGames">
+                        <div class="d-flex justify-content-center">
+                            <img class="card-img p-3 pb-0" :src="game.imageHeader" alt="Game 1">
+                        </div>
+                        <div class="card-info">
+                            <p class="text-title text-light">{{game.gameName}}</p>
+                            <div class="overflow-auto description-card">
+                                <p class="text-light">{{game.desc_short}}</p>
+                            </div>
+                            <button class="btn-login mt-3" @click.prevent="modalDescription(game)">See More</button>
+                        </div>
+                        <div class="card-footer mt-4">
+                            <span class="text-title text-light fw-bold">$ {{game.price}}</span>
+                            <div class="card-button" @click.prevent="login">
+                                <svg class="svg-icon" fill="red" viewBox="0 0 20 20">
+                                    <path
+                                        d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                                    </path>
+                                    <path
+                                        d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                                    </path>
+                                    <path
+                                        d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Aside para los articulos -->
+            <aside class="aside-home rounded p-4 animate__animated animate__fadeInUp">
+                <div>
+                    <h4 class="text-light fs-3 text-center">Articles</h4>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <img src="./assets/img/article_1.jpg" class="rounded img-article mb-3 mt-3" alt="article 1">
+                        <p class="text-light">The announcement that attracted the most attention was the confirmation of the
+                            event that Xbox will host in Los Angeles in the middle of the year. However, no explicit mention
+                            was made of E3 2023, which will finally return this year after 4 years of suspension due to the
+                            coronavirus (COVID-19).</p>
+                        <a class="text-light text-decoration-underline read-article"
+                            href="https://www.levelup.com/noticias/722191/Xbox-confirma-proximo-evento-en-Los-Angeles-pero-no-menciona-al-E3-2023"
+                            target="_blank">Read more</a>
+                        <hr class="hr-article">
+                    </div>
+    
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <img class="rounded img-article mb-3 mt-3" src="./assets/img/article_2.jpg" alt="article 2">
+                        <p class="text-light">In a post on its official blog, 4A Games sent a greeting to fans and provided
+                            information about the status of its employees and projects. First of all, the studio informed
+                            that most of its employees are still working in the Kiev office, while others are working from
+                            home and some others in other parts of Europe.</p>
+                        <a class="text-light text-decoration-underline read-article"
+                            href="https://www.levelup.com/noticias/722163/El-nuevo-Metro-estara-influenciado-por-la-guerra-en-Ucrania"
+                            target="_blank">Read more</a>
+                    </div>
+    
+                    <div class="mt-5 text-center">
+                        <a class="text-light fw-bold fs-5 text-decoration-underline" href="https://www.levelup.com/noticias"
+                            target="_blank">
+                            <p class="read-more">Read more news</p>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    
+        <footer class="d-flex justify-content-center pb-3">
+            <div class="nav-neumporphism footer-home mt-5">
+                <div class="d-flex justify-content-between align-items-center p-4 pb-2">
+                    <div class="d-flex align-items-center">
+                        <img class="icon-footer pt-3 ps-3" src="./assets/img/SemfilLogo.png" alt="Logo Semfil">
+                        <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
+                    </div>
+                    <div class="d-flex flex-column nav-footer gap-3">
+                        <li class="text-light mb-0"><a class="text-light link-home" id="active" href="#">Home</a>
+                        </li>
+                        <li class="text-light mb-0"><a class="text-light link-home" href="./about.html">About Us</a></li>
+                        <li class="text-light mb-0"><a class="text-light link-home" href="./contact.html">Contact</a></li>
+                    </div>
+                    <div>
+                        <p class="text-light fs-5 text-center">FOLLOW US</p>
+                        <div class="d-flex gap-2">
+                            <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
+                                    class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
+                            <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
+                                    class="icons" src="./assets/img/instagram.png" alt="instagram_icon"></a>
+                            <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
+                                class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
+                                    alt="twitter_icon"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-light fs-5 pe-4 text-call">CALL US</p>
+                        <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
                     </div>
                 </div>
                 <div>
-                    <p class="text-light fs-5 pe-4 text-call">CALL US</p>
-                    <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
+                    <hr class="hr-footer">
+                    <div class="d-flex justify-content-around footer-terms mt-3">
+                        <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
+                        <p class="text-light text-footer">TERMS AND CONDITIONS</p>
+                    </div>
                 </div>
             </div>
-            <div>
-                <hr class="hr-footer">
-                <div class="d-flex justify-content-around footer-terms mt-3">
-                    <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
-                    <p class="text-light text-footer">TERMS AND CONDITIONS</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="./assets/js/home.js"></script>
 </body>
+
 </html>
