@@ -7,181 +7,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/img/cart_favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/stylesCart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/stylesCart.css">
     <title>Cart</title>
 </head>
 
-<body class="body-main">
-    <header>
-        <!-- Nav desktop -->
-        <div class="pt-2 d-flex justify-content-between align-items-center nav-home">
-            <div>
-                <img class="header-logo ms-5 animate__animated animate__slideInDown" src="./assets/img/SemfilLogo.png"
-                    alt="Company Logo">
-            </div>
-
-            <nav class="d-flex gap-5 p-4 nav-neumporphism animate__animated animate__slideInDown">
-                <li class="nav-neon"><a class="text-light link-home" href="./store.html">Store</a></li>
-                <li class="nav-neon"><a class="text-light link-home" href="./about.html">About Us</a></li>
-                <li class="nav-neon"><a href="./contact.html" class="text-light link-home">Contact</a></li>
-            </nav>
-
-            <div class="d-flex gap-4 p-4 me-5 animate__animated animate__slideInDown">
-                <button class="btn-login"><img src="./assets/img/salida_button.png" alt="exit icon"
-                        style="width: 1.5rem;"></button>
-            </div>
-        </div>
-
-        <!-- Nav Mobile -->
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <img class="image-navbar" src="./assets/img/SemfilLogo.png" alt="Image Navbar">
-            <a href="./store.html">Store</a>
-            <a href="./about.html">About Us</a>
-            <a href="./contact.html">Contact</a>
-        </div>
-
-        <div class="d-flex justify-content-between">
-            <div id="main">
-                <button class="openbtn rounded" onclick="openNav()">☰</button>
-            </div>
-            <div class="d-flex pe-3 pt-3 btn-login-hide">
-                <button class="btn-login btn-login-mb animate__animated animate__slideInDown"><img src="./assets/img/salida_button.png" alt="cart icon" style="width: 1.5rem; margin-bottom: 0.5rem;"></button>
-            </div>
-        </div>
-    </header>
-
-    <h1 class="text-light text-center rounded animate__animated animate__fadeInUp mb-4"><span
-            class="text-danger">Shopping </span>Cart</h1>
-    <main class="gap-4 main-cart">
-        <article class="p-4 article-home rounded animate__animated animate__fadeInUp">
-            <div class="cart">
-                <div class="div-img">
-                    <img src="https://img.unocero.com/2014/02/BIOSHOCK.jpg" alt="">
+<body>
+    <div id="app" class="body-main" v-cloak>
+        <p class="d-none">{{totalPay}}</p>
+        <header>
+            <!-- Nav desktop -->
+            <div class="pt-2 d-flex justify-content-between me-5 align-items-center nav-home">
+                <div>
+                    <img class="header-logo ms-5 animate__animated animate__slideInDown" src="./assets/img/SemfilLogo.png"
+                        alt="Company Logo">
                 </div>
-                <div class="div-cart">
-                    <div class="d-flex col-12 align-items-center justify-content-between">
-                        <h4>Name</h4>
-                        <div>
-                            <button type="button" class="btn btn-login fw-bold">X</button>
-                        </div>
+    
+                <nav class="d-flex gap-5 p-4 nav-neumporphism animate__animated animate__slideInDown">
+                    <li class="nav-neon"><a class="text-light link-home" href="./home.html">Home</a></li>
+                    <li class="nav-neon"><a class="text-light link-home" href="./store.html">Store</a></li>
+                    <li class="nav-neon"><a class="text-light link-home" id="active" href="#">Cart</a></li>
+                    <li class="nav-neon"><a class="text-light link-home" href="./about.html">About Us</a></li>
+                    <li class="nav-neon"><a href="./contact.html" class="text-light link-home">Contact</a></li>
+                </nav>
+    
+                <div class="d-flex gap-4 p-4 me-5 animate__animated animate__slideInDown">
+                    <button class="btn-login"><img src="./assets/img/salida_button.png" alt="exit icon"
+                            style="width: 1.5rem;"></button>
+                </div>
+            </div>
+    
+            <!-- Nav Mobile -->
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <div class="d-flex justify-content-center">
+                    <img class="image-navbar mb-4" src="./assets/img/SemfilLogo.png" alt="Image Navbar">
+                </div>    
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/home.png" alt="logo user">
+                    <a href="./home.html" class="ms-0">Home</a>
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/store_favicon.png" alt="store icon">
+                    <a href="./store.html" class="ms-0">Store</a>
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/cart_favicon.png" alt="store icon">
+                    <a href="#" id="active-mobile" class="ms-0">Cart</a>
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/about_us.png" alt="logo about us">
+                    <a href="./about.html">About Us</a>
+                </div>
+                <div class="d-flex">
+                    <img class="icon-nav" src="./assets/img/contact.png" alt="logo contact">
+                    <a href="./contact.html">Contact</a>
+                </div>
+            </div>
+    
+            <div class="d-flex justify-content-between">
+                <div id="main">
+                    <button class="openbtn rounded" onclick="openNav()">☰</button>
+                </div>
+                <div class="d-flex pe-3 pt-3 btn-login-hide">
+                    <button class="btn-login btn-login-mb animate__animated animate__slideInDown"><img src="./assets/img/salida_button.png" alt="cart icon" style="width: 1.5rem; margin-bottom: 0.5rem;"></button>
+                </div>
+            </div>
+        </header>
+    
+        <h1 class="text-light text-center rounded animate__animated animate__fadeInUp mb-4"><span class="text-danger">Shopping </span>Cart</h1>
+        <main class="gap-4 main-cart" style="margin-top: 6rem;">
+            <article class="p-4 article-home rounded animate__animated animate__fadeInUp">
+                <div v-if="gamesStorage.length == 0" class="d-flex justify-content-center">
+                    <h2 class="text-light fw-bold text-center">You have no products in your cart</h2>
+                </div>
+                <div class="cart" v-for="game in gamesStorage">
+                    <div class="div-img">
+                        <img :src="game.imageHeader" alt="img">
                     </div>
-
-                    <h5>Category</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non maiores ducimus, in itaque qui
-                        repellendus sint dicta deserunt
-                        reprehenderit similique veritatis obcaecati sunt nulla, repudiandae, dolorum numquam unde
-                        explicabo autem.</p>
-                    <div class="d-flex align-items-center justify-content-between col-12">
-                        <h4>20$</h4>
-                        <div class="stock">
-                            <h4>Stock 4</h4>
-                            <div class="cant-produc">
-                                <button @click="" type="button" style="width: 0.5rem;"
-                                    class="btn btn-danger d-flex justify-content-center fs-5 btn-login fw-bold">-</button>
-                                <p class="card-texf fs-5 fw-bold">1</p>
-                                <button @click="" type="button" style="width: 0.5rem;"
-                                    class="btn btn-success d-flex justify-content-center fs-5 btn-login fw-bold">+</button>
+                    <div class="div-cart w-100">
+                        <div class="d-flex col-12 align-items-center justify-content-between">
+                            <h4>{{game.gameName}}</h4>
+                            <div>
+                                <button type="button" class="btn-login fw-bold" @click.prevent="deleteGame(game.id)">X</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="cart">
-                <div class="div-img">
-                    <img src="https://cdn.tutsplus.com/cdn-cgi/image/width=640/psd/uploads/legacy/psdtutsarticles/linkb_60vgamecovers/22.jpg"
-                        alt="">
-                </div>
-                <div class="div-cart">
-                    <div class="d-flex col-12 align-items-center justify-content-between">
-                        <h4>Name</h4>
-                        <div>
-                            <button type="button" class="btn btn-login fw-bold">X</button>
-                        </div>
-                    </div>
-                    <h5>Category</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non maiores ducimus, in itaque qui
-                        repellendus sint dicta deserunt
-                        reprehenderit similique veritatis obcaecati sunt nulla, repudiandae, dolorum numquam unde
-                        explicabo autem.</p>
-                    <div class="d-flex align-items-center justify-content-between col-12">
-                        <h4>12$</h4>
-                        <div class="stock">
-                            <h4>Stock 7</h4>
-                            <div class="cant-produc">
-                                <button @click="" type="button" style="width: 0.5rem;"
-                                    class="btn btn-success d-flex justify-content-center fs-5 btn-login fw-bold">-</button>
-                                <p class="card-texf fs-5 fw-bold">1</p>
-                                <button @click="" type="button" style="width: 0.5rem;"
-                                    class="btn btn-success d-flex justify-content-center fs-5 btn-login fw-bold">+</button>
+    
+                        <p>{{game.desc_short}}</p>
+                        <div class="d-flex align-items-center justify-content-between col-12">
+                            <h4>{{formatMoney(game.price)}}</h4>
+                            <div class="stock">
+                                <h4>{{game.stock}}</h4>
+                                <div class="cant-produc">
+                                    <button type="button" style="width: 0.5rem;"
+                                        class="btn-danger d-flex justify-content-center fs-5 btn-login fw-bold" @click.prevent="stockQuantity(2, game)">-</button>
+                                    <p class="card-texf fs-5 fw-bold">{{game.stockGame}}</p>
+                                    <button type="button" style="width: 0.5rem;"
+                                        class="btn-success d-flex justify-content-center fs-5 btn-login fw-bold" @click.prevent="stockQuantity(1, game)">+</button>
+                                </div>
                             </div>
                         </div>
+                        <hr>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Div para los filtros -->
+            <aside class="aside-home d-flex flex-column justify-content-between gap-5 rounded p-4 animate__animated animate__fadeInUp">
+                <div class="d-flex flex-column col-12 justify-content-between">
+                    <template v-for="game in gamesStorage">
+                        <div class="d-flex justify-content-between gap-3">
+                            <p class="text-light fs-5 fw-bold">{{game.gameName}} <span class="text-danger fw-bold">x{{game.stockGame}}</span></p>
+                            <p class="text-light fs-5 fw-bold">{{formatMoney(game.price * game.stockGame)}}</p>
+                        </div>
+                    </template>
+                    <div class="d-flex flex-column align-items-end mt-3">
+                        <h3 class="white">Total to Pay</h3>
+                        <h4 class="white">{{formatMoney(totalPayment)}}</h4>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn-login" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Complete Purchase
+                      </button>
+                </div>
+            </aside>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Payment</h1>
+                    <button type="button" class="btn-close text-light btn btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <template v-for="game in gamesStorage">
+                            <div class="d-flex justify-content-between gap-3">
+                                <p class="text-light fs-5 fw-bold">{{game.gameName}} <span class="text-danger fw-bold">x{{game.stockGame}}</span></p>
+                                <p class="text-light fs-5 fw-bold">{{formatMoney(game.price * game.stockGame)}}</p>
+                            </div>
+                        </template>
+                        <div class="d-flex flex-column align-items-end mt-3">
+                            <h3 class="white">Total to Pay</h3>
+                            <h4 class="white">{{formatMoney(totalPayment)}}</h4>
+                            <hr class="hr-payment">
+                        </div>
+
+                        <div>
+                            <form>
+                                <h5 class="text-light fw-bold">Enter card to pay</h5>
+                                <div>
+                                    <label for="numberCard" class="text-light fw-bold me-2 mt-3">Number Card:</label>
+                                    <input type="text" class="search" id="numberCard" v-model="numberCard">
+                                </div>
+                                <div>
+                                    <label for="" class="text-light fw-bold me-2 mt-3">Placeholder: </label>
+                                    <input type="text" class="search" id="">
+                                </div>
+                                <div>
+                                    <label for="date" class="form-check-label text-light fw-bold me-2 mt-3">Expiration date:</label>
+                                    <input id="date" class="input-amount search" type="date">
+                                </div>
+                                <div>
+                                    <label for="" class="text-light fw-bold me-2 mt-3">CVV</label>
+                                    <input type="number" name="" class="search" id="" v-model="cvvCard">
+                                </div>
+                                <div>
+                                    <label for="" class="text-light fw-bold me-2 mt-3">Amount</label>
+                                    <input type="number" name="" class="search" id="" v-model="amount">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn-login" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn-login" @click.prevent="payment">Pay Games</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer class="d-flex justify-content-center pb-3">
+            <div class="nav-neumporphism footer-home mt-5">
+                <div class="d-flex justify-content-between align-items-center p-4 pb-2">
+                    <div class="d-flex align-items-center">
+                        <img class="icon-footer pt-3 ps-3" src="./assets/img/SemfilLogo.png" alt="Logo Semfil">
+                        <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
+                    </div>
+                    <div class="d-flex flex-column nav-footer gap-3">
+                        <li class="text-light mb-0"><a class="text-light link-home" href="./home.html">Home</a>
+                        </li>
+                        <li class="text-light mb-0"><a class="text-light link-home" href="./store.html">Store</a></li>
+                        <li class="text-light mb-0"><a class="text-light link-home" href="./about.html">About Us</a></li>
+                        <li class="text-light mb-0"><a class="text-light link-home" href="./contact.html">Contact</a></li>
+                </div>
+                    <div>
+                        <p class="text-light fs-5 text-center">FOLLOW US</p>
+                        <div class="d-flex gap-2">
+                            <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
+                                    class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
+                            <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
+                                    class="icons" src="./assets/img/instagram.png" alt="instagram_icon"></a>
+                            <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
+                                class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
+                                    alt="twitter_icon"></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-light fs-5 pe-4 text-call">CALL US</p>
+                        <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
+                    </div>
+                </div>
+                <div>
+                    <hr class="hr-footer">
+                    <div class="d-flex justify-content-around footer-terms mt-3">
+                        <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
+                        <p class="text-light text-footer">TERMS AND CONDITIONS</p>
                     </div>
                 </div>
             </div>
-            <hr>
-        </article>
+        </footer>
+    </div>
 
-
-        <!-- Div para los filtros -->
-        <aside class="aside-home rounded p-4 animate__animated animate__fadeInUp">
-            <div class="d-flex align-items-center col-12 justify-content-between">
-                <h3 class="white">Total to pay</h3>
-                <h4 class="white">32$</h4>
-            </div>
-        </aside>
-    </main>
-
-    <footer class="d-flex justify-content-center mb-3">
-        <div class="nav-neumporphism footer-home mt-5">
-            <div class="d-flex justify-content-between align-items-center p-4 pb-2">
-                <div class="d-flex align-items-center">
-                    <img class="icon-footer pt-3 ps-3" src="./assets/img/SemfilLogo.png" alt="Logo Semfil">
-                    <p class="text-light mb-0 fw-bold fs-5 text-footer-h">We think differently, we do differently</p>
-                </div>
-                <div class="d-flex flex-column nav-footer gap-3">
-                    <li class="text-light mb-0"><a class="text-light link-home" href="./store.html">Store</a>
-                    </li>
-                    <li class="text-light mb-0"><a class="text-light link-home" href="./about.html">About Us</a></li>
-                    <li class="text-light mb-0"><a class="text-light link-home" href="./contact.html">Contact</a></li>
-                </div>
-                <div>
-                    <p class="text-light fs-5 text-center">FOLLOW US</p>
-                    <div class="d-flex gap-2">
-                        <a href="https://www.facebook.com/GAMINGbible" target="_blank" class="icon-hover"><img
-                                class="icons" src="./assets/img/facebook_icon.png" alt="facebook_icon"></a>
-                        <a href="https://www.instagram.com/gamingbible/?hl=en" target="_blank" class="icon-hover"><img
-                                class="icons" src="./assets/img/instagram.png" alt="instagram_icon"></a>
-                        <a href="https://twitter.com/gamingbible?s=20&t=u66nWvSupFjvdyX0xNDKhw" target="_blank"
-                            class="icon-hover"><img class="icons" src="./assets/img/twitter_icon.png"
-                                alt="twitter_icon"></a>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-light fs-5 pe-4 text-call">CALL US</p>
-                    <p class="fw-bold text-light pe-4 fs-5 text-call mt-0">09 999 9999</p>
-                </div>
-            </div>
-            <div>
-                <hr class="hr-footer">
-                <div class="d-flex justify-content-around footer-terms mt-3">
-                    <p class="text-light text-footer">&#169 2023 Semfil Gaming, Argentina. All Rights Reserved</p>
-                    <p class="text-light text-footer">TERMS AND CONDITIONS</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
     <script src="./assets/js/cart.js"></script>
 </body>
 </html>

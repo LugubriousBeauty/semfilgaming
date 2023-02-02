@@ -52,7 +52,9 @@ const app = createApp({
                                 ${game.recommendedReq}
                             </div>
                         </div>
-                        <button class="btn-login mt-4">${genreNameObject.genreName}</button>
+                        <div>
+                            <p class="mt-4 text-light fw-bold">Genre: ${genreNameObject.genreName}</p>
+                        </div>
                         </div>
                     </div>
                     `,
@@ -65,7 +67,15 @@ const app = createApp({
             })
         },
         login() {
-            location.href = '../../login.html'
+            location.href = '../../store.html'
+        },
+        formatMoney(amount){
+            let aux = amount
+            let USDollar = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            });
+            return USDollar.format(aux)
         }
     }
 })

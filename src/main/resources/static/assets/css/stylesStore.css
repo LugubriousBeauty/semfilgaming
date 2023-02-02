@@ -60,7 +60,7 @@ a {
 
 /* Header */
 .header-logo {
-    width: 7rem;
+    width: 10rem;
 }
 
 .nav-neon {
@@ -127,6 +127,14 @@ a {
 
 
 /* Main */
+main {
+    min-height: 40vh;
+}
+
+::placeholder {
+    color: blue;
+    font-size: 1.5em;
+}
 .article-div{
     display: flex;
     flex-wrap: wrap;
@@ -147,7 +155,7 @@ a {
 }
 
 .aside-home {
-    width: 80%;
+    width: 64%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -171,19 +179,30 @@ a {
 }
 
 .search{
-    background: rgba(255, 255, 255, 0.062);
+    background: rgba(255, 255, 255, 0);
     border: 1px solid #a81515;
     border-radius: 10px;
-    width: 12rem;
+    width: 17rem;
     height: 2.5em;
+}
+
+@media (max-width: 900px) {
+    .buton-aside {
+        margin-right: 3rem !important;
+    }
+    .search {
+        width: 10rem;
+        margin-left: 1px !important;
+        margin-right: 1rem !important;
+    }
 }
 
 .buton-aside{
     background-color: black;
     color: white;
     width: 4rem;
-    height: 2.5rem;
-    border-radius: 10px;
+    height: 3rem;
+    border-radius: 1em;
     border: 2px solid rgba(255, 0, 34, 0.534);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
@@ -194,13 +213,15 @@ a {
 }
 
 .card {
-    width: 20rem;
-    height: 21rem;
+    padding-bottom: 1rem;
+    width: 29rem;
+    height: 39.5rem;
     padding: .8em;
-    background: #3534347e;
-    border-color: white;
-    overflow: visible;
+        background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
     border-color: rgba(255, 0, 34, 0.534);
+    overflow: visible;
 }
 
 .card-img {
@@ -215,8 +236,8 @@ a {
 
 .svg-icon {
     color: white;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
 
 .card-footer {
@@ -225,7 +246,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgba(255, 0, 34, 0.534);
 }
 
 .text-title {
@@ -240,12 +261,13 @@ a {
 }
 
 .card-button {
-    border: 1px solid #ffffff;
+    border: 1px solid #fd0303;
     display: flex;
     padding: .3em;
     cursor: pointer;
     border-radius: 50px;
-    transition: .3s ease-in-out;
+    transition: .1s ease-in-out;
+    background-color: #000000;
 }
 
 .card-img:hover {
@@ -253,13 +275,12 @@ a {
 }
 
 .card-button:hover {
-    border: 1px solid #ffcaa6;
-    background-color: #a81515;
+    border: 3px solid #e90404;
 }
 
 /* Footer */
 .footer-home {
-    width: 75vw;
+    width: 85vw;
 }
 
 .sidebar {
@@ -319,9 +340,16 @@ a {
 
 .hr-footer {
     border: 1.6px solid rgb(255, 3, 36);
-    width: 60vw;
+    width: 80vw;
     margin: 0 auto;
     margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+    .hr-footer {
+        width: 60vw;
+    }
+
 }
 
 .text-footer {
@@ -359,8 +387,15 @@ a {
 
 
 .card {
-    width: 17rem;
-    height: 18rem;
+    padding-bottom: 1rem;
+    width: 290px;
+    height: 32.5rem;
+    padding: .8em;
+        background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-color: rgba(255, 0, 34, 0.534);
+    overflow: visible;
 }
 }
 
@@ -447,4 +482,50 @@ a {
         display: none !important;
     }
 
+}
+
+.swal2-styled.swal2-confirm.swalBtnColor {
+    height: 4rem;
+    width: 4rem;
+    font-weight: bold;
+    background-color: #a81515;
+}
+
+.description-card {
+    height: 8rem;
+}
+
+.swal2-success-circular-line-right, .swal2-success-circular-line-left, .swal2-success-fix{
+    display: none !important;
+}
+
+.my-swal {
+    width: 50vw;
+    border: 2px solid rgba(255, 0, 34, 0.534);
+    background: rgba( 255, 255, 255, 0.05 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 20rem;
+        height: 35rem;
+    }
+    .card-img {
+        width: 110%;
+    }
+    .video-card {
+        height: 9rem;
+        width: 90vw;
+    }
+}
+
+@media (max-width: 1600px) {
+    .my-swal {
+        width: 70vw;
+    }
+    .div-card {
+        width: 60vw;
+    }
 }

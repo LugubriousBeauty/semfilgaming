@@ -197,7 +197,7 @@ a {
 .card {
     padding-bottom: 1rem;
     width: 290px;
-    height: 32.5rem;
+    height: 33.5rem;
     padding: .8em;
         background: rgba(255, 255, 255, 0);
     backdrop-filter: blur( 6px );
@@ -218,8 +218,8 @@ a {
 
 .svg-icon {
     color: white;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .card-footer {
@@ -248,7 +248,8 @@ a {
     padding: .3em;
     cursor: pointer;
     border-radius: 50px;
-    transition: .3s ease-in-out;
+    transition: .1s ease-in-out;
+    background-color: #000000;
 }
 
 .card-img:hover {
@@ -256,7 +257,7 @@ a {
 }
 
 .card-button:hover {
-    border: 1px solid #e90404;
+    border: 2px solid #e90404;
     background-color: #000000;
 }
 
@@ -289,14 +290,23 @@ a {
 
 /* Footer */
 .footer-home {
-    width: 75vw;
+    width: 94vw;
 }
 
 .hr-footer {
     border: 1.6px solid rgb(255, 3, 36);
-    width: 60vw;
+    width: 90vw;
     margin: 0 auto;
     margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+    .footer-home {
+        width: 70vw;
+    }
+    .hr-footer {
+        width: 60vw;
+    }
 }
 
 .text-footer {
@@ -373,8 +383,6 @@ a {
     width: 7rem;
     margin-bottom: 0.3rem;
 }
-
-
 
 .icon-hover:hover {
     transform: translateY(20%);
@@ -472,7 +480,7 @@ a {
 
 /* Login & Register*/
 .body-login {
-    background-image: url(../img/background-image.jpg);
+    background-image: url(../img/background.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -806,12 +814,15 @@ a {
 }
 
 @media (max-width: 900px) {
-    .my-swal {
-        width: 70vw;
-    }
+}
+
+@media (max-width: 1600px) {
     .video-card {
         height: 9rem;
         width: 90vw;
+    }
+    .my-swal {
+        width: 70vw;
     }
     .div-card {
         width: 60vw;
